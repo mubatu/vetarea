@@ -114,7 +114,7 @@ a {
 }
 
 .header-inner {
-  min-height: 78px;
+  min-height: 86px;
   display: flex;
   align-items: center;
   gap: 28px;
@@ -123,13 +123,13 @@ a {
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 11px;
+  gap: 13px;
   flex: 0 0 auto;
 }
 
 .brand-mark {
-  width: 42px;
-  height: 42px;
+  width: 52px;
+  height: 52px;
   display: grid;
   place-items: center;
   flex: 0 0 auto;
@@ -148,7 +148,7 @@ a {
 
 .brand-copy strong {
   color: var(--navy);
-  font-size: 17px;
+  font-size: 21px;
   font-weight: 850;
   letter-spacing: .06em;
 }
@@ -156,7 +156,7 @@ a {
 .brand-copy small {
   margin-top: 5px;
   color: #65798b;
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 700;
   letter-spacing: .04em;
   text-transform: uppercase;
@@ -172,7 +172,7 @@ a {
 .desktop-nav a {
   position: relative;
   color: #344f66;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 700;
 }
 
@@ -232,6 +232,10 @@ a {
   padding-inline: 19px;
   border-radius: 11px;
   font-size: 12px;
+}
+
+.header-cta {
+  font-size: 16px;
 }
 
 .mobile-menu {
@@ -318,7 +322,8 @@ a {
   max-width: 570px;
   margin: 27px 0 29px;
   color: #536c7e;
-  font-size: 17px;
+  font-size: 18px;
+  font-weight: 600;
   line-height: 1.75;
 }
 
@@ -328,12 +333,16 @@ a {
   gap: 28px;
 }
 
+.hero-actions .button {
+  font-size: 16px;
+}
+
 .text-link {
   display: inline-flex;
   align-items: center;
   gap: 12px;
   color: #536c7e;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 700;
   line-height: 1.25;
 }
@@ -342,7 +351,8 @@ a {
   display: block;
   margin-top: 3px;
   color: var(--navy);
-  font-size: 13px;
+  font-size: 16px;
+  font-weight: 650;
 }
 
 .link-icon {
@@ -369,12 +379,14 @@ a {
 .hero-note p {
   margin: 0;
   color: #6d7e8b;
-  font-size: 11px;
+  font-size: 13px;
+  font-weight: 600;
   line-height: 1.45;
 }
 
 .hero-note strong {
   color: var(--ink);
+  font-weight: 800;
 }
 
 .avatar-stack {
@@ -533,15 +545,15 @@ a {
   border-radius: 14px 14px 14px 5px;
   background: #eef4f7;
   color: var(--navy);
-  font-size: 12px;
-  font-weight: 850;
+  font-size: 14px;
+  font-weight: 650;
 }
 
 .trust-grid a:first-child .trust-number { background: rgba(233,21,35,.09); color: var(--red); }
 
 .trust-grid a > span:nth-child(2) { display: grid; line-height: 1.3; }
-.trust-grid strong { color: var(--navy-deep); font-size: 13px; }
-.trust-grid small { margin-top: 5px; color: #80909c; font-size: 10px; }
+.trust-grid strong { color: var(--navy-deep); font-size: 15px; font-weight: 650; }
+.trust-grid small { margin-top: 5px; color: #80909c; font-size: 13px; font-weight: 600; }
 .trust-number svg { color: currentColor; }
 .trust-grid > a > svg { color: var(--red); }
 
@@ -652,7 +664,8 @@ a {
 .service-card p {
   margin: 0;
   color: #687a88;
-  font-size: 13px;
+  font-size: 15px;
+  font-weight: 600;
   line-height: 1.7;
 }
 
@@ -731,7 +744,8 @@ a {
   max-width: 520px;
   margin: 25px 0 34px;
   color: #b7cad7;
-  font-size: 15px;
+  font-size: 17px;
+  font-weight: 600;
 }
 
 .principles {
@@ -857,7 +871,8 @@ a {
   max-width: 510px;
   margin: 25px 0;
   color: #b6c9d6;
-  font-size: 14px;
+  font-size: 16px;
+  font-weight: 600;
 }
 
 .contact-actions {
@@ -884,8 +899,8 @@ a {
   border-bottom: 1px solid rgba(255,255,255,.15);
 }
 
-.contact-list dt { color: #789aae; font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; }
-.contact-list dd { margin: 0; color: white; font-size: 12px; font-weight: 700; }
+.contact-list dt { color: #789aae; font-size: 12px; font-weight: 650; text-transform: uppercase; letter-spacing: .06em; }
+.contact-list dd { margin: 0; color: white; font-size: 14px; font-weight: 650; }
 
 .map-card {
   position: relative;
@@ -1027,7 +1042,7 @@ a {
 
 @media (max-width: 1020px) {
   .desktop-nav { gap: 16px; }
-  .desktop-nav a { font-size: 11px; }
+  .desktop-nav a { font-size: 14px; }
   .hero-grid { grid-template-columns: 1fr .85fr; gap: 35px; }
   .hero-visual { min-height: 500px; }
   .open-card { right: -10px; }
@@ -1039,13 +1054,13 @@ a {
   .announcement-inner { min-height: 34px; }
   .announcement-inner > span { font-size: 10px; }
   .announcement a { display: none; }
-  .header-inner { min-height: 70px; }
+  .header-inner { min-height: 76px; }
   .desktop-nav, .header-cta { display: none; }
   .mobile-menu { display: block; position: relative; }
   .mobile-menu summary { min-height: 40px; display: grid; place-items: center; padding: 0 14px; border: 1px solid var(--line); border-radius: 10px; }
   .mobile-menu[open] nav { display: grid; }
   .mobile-menu nav { position: absolute; top: 49px; right: 0; width: min(310px, calc(100vw - 36px)); display: grid; padding: 11px; border: 1px solid var(--line); border-radius: 15px; background: white; box-shadow: var(--shadow); }
-  .mobile-menu nav a { padding: 11px 13px; border-bottom: 1px solid #edf1f3; color: var(--navy); font-size: 13px; font-weight: 700; }
+  .mobile-menu nav a { padding: 11px 13px; border-bottom: 1px solid #edf1f3; color: var(--navy); font-size: 14px; font-weight: 700; }
   .mobile-menu nav a[aria-current="page"] { color: var(--red); }
   .mobile-menu nav a:last-child { margin-top: 8px; border: 0; border-radius: 9px; background: var(--red); color: white; text-align: center; }
   .hero { padding: 34px 0 44px; }
@@ -1076,12 +1091,12 @@ a {
   html { scroll-padding-top: 90px; }
   body { padding-bottom: 68px; }
   .shell { width: calc(100% - 32px); }
-  .brand-mark { width: 38px; height: 38px; border-radius: 11px 11px 11px 4px; font-size: 21px; }
-  .brand-copy strong { font-size: 15px; }
-  .brand-copy small { font-size: 8px; }
+  .brand-mark { width: 44px; height: 44px; border-radius: 11px 11px 11px 4px; font-size: 21px; }
+  .brand-copy strong { font-size: 17px; }
+  .brand-copy small { font-size: 9px; }
   .hero { padding-top: 26px; }
   .hero h1 { font-size: clamp(42px, 13vw, 55px); }
-  .hero-lead { margin: 22px 0; font-size: 15px; line-height: 1.68; }
+  .hero-lead { margin: 22px 0; font-size: 16px; line-height: 1.68; }
   .hero-actions { align-items: stretch; flex-direction: column; gap: 16px; }
   .hero-actions .button { width: 100%; }
   .text-link { justify-content: center; }
