@@ -32,7 +32,7 @@ const isActive = (href: string) => activePath === href || Astro.url.pathname ===
           <a href={item.href} aria-current={isActive(item.href) ? "page" : undefined}>{item.label}</a>
         ))}
       </nav>
-      <a class="button button-small header-cta" href={site.whatsapp.href}>
+      <a class="button button-small header-cta" href={site.whatsapp.href} target="_blank" rel="noopener noreferrer">
         {site.ui.appointmentCta} <ArrowUpRight aria-hidden="true" size={15} />
       </a>
       <details class="mobile-menu">
@@ -41,7 +41,7 @@ const isActive = (href: string) => activePath === href || Astro.url.pathname ===
           {site.nav.map((item) => (
             <a href={item.href} aria-current={isActive(item.href) ? "page" : undefined}>{item.label}</a>
           ))}
-          <a href={site.whatsapp.href}>{site.ui.appointmentCta}</a>
+          <a href={site.whatsapp.href} target="_blank" rel="noopener noreferrer">{site.ui.appointmentCta}</a>
         </nav>
       </details>
     </div>

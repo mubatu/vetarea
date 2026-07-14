@@ -530,11 +530,10 @@ a {
   align-items: center;
   gap: 18px;
   padding: 18px 31px;
-  border-right: 1px solid var(--line);
   transition: background .2s ease;
 }
 
-.trust-grid > a:first-child { border-left: 1px solid var(--line); }
+.trust-grid > a + a { border-left: 1px solid var(--line); }
 .trust-grid > a:hover { background: #f2f7fa; }
 
 .trust-number {
@@ -885,6 +884,17 @@ a {
 .button-white:hover { background: #eaf1f5; }
 .button-outline-light { border-color: rgba(255,255,255,.32); background: transparent; box-shadow: none; }
 .button-outline-light:hover { border-color: white; background: rgba(255,255,255,.08); }
+.button-whatsapp {
+  border-color: #22c35d;
+  background: #22c35d;
+  color: white;
+  box-shadow: 0 12px 24px rgba(18, 140, 74, .2);
+}
+.button-whatsapp:hover {
+  background: #1eae53;
+  border-color: #1eae53;
+  box-shadow: 0 16px 32px rgba(18, 140, 74, .26);
+}
 
 .contact-list {
   margin: 0;
@@ -1071,7 +1081,7 @@ a {
   .hero-image-wrap { left: 0; }
   .open-card { right: 15px; }
   .trust-grid { grid-template-columns: 1fr; }
-  .trust-grid > a { min-height: 93px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .trust-grid > a { min-height: 93px; border-left: 0; border-bottom: 1px solid var(--line); }
   .trust-grid > a:last-child { border-bottom: 0; }
   .section { padding: 88px 0; }
   .section.services-section { padding-top: 44px; }
