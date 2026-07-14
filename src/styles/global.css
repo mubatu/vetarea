@@ -299,6 +299,19 @@ a {
   line-height: 1.02;
 }
 
+.hero h1 {
+  font-size: clamp(32px, 3.5vw, 48px);
+}
+
+.about-copy h1,
+.contact-copy h1 {
+  font-size: clamp(32px, 3.5vw, 48px);
+}
+
+.faq-heading h1 {
+  font-size: clamp(31px, 3.3vw, 44px);
+}
+
 .hero h1 em {
   position: relative;
   color: var(--red);
@@ -1095,7 +1108,7 @@ a {
   .brand-copy strong { font-size: 19px; }
   .brand-copy small { font-size: 10px; }
   .hero { padding-top: 26px; }
-  .hero h1 { font-size: clamp(42px, 13vw, 55px); }
+  .hero h1 { font-size: clamp(29px, 9vw, 38px); }
   .hero-lead { margin: 22px 0; font-size: 16px; line-height: 1.68; }
   .hero-actions { align-items: stretch; flex-direction: column; gap: 16px; }
   .hero-actions .button { width: 100%; }
@@ -1108,6 +1121,8 @@ a {
   .section { padding: 74px 0; }
   .section.services-section { padding-top: 32px; }
   .section-heading h2, .centered-heading h2, .about-copy h1, .about-copy h2, .contact-copy h1, .contact-copy h2, .faq-heading h1, .faq-heading h2 { font-size: 38px; }
+  .about-copy h1, .contact-copy h1 { font-size: clamp(29px, 9vw, 38px); }
+  .faq-heading h1 { font-size: 31px; }
   .page-hero h1 { font-size: clamp(42px, 13vw, 55px); }
   .services-grid { grid-template-columns: 1fr; }
   .service-card { min-height: 420px; }
