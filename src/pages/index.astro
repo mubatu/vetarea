@@ -65,25 +65,4 @@ const getSharedHref = (href: string) => {
       ))}
     </div>
   </section>
-
-  <section class="section explore-section" aria-labelledby="explore-title">
-    <div class="shell">
-      <div class="section-heading split-heading">
-        <div>
-          <p class="eyebrow dark"><span aria-hidden="true">●</span> {home.data.home.explore.eyebrow}</p>
-          <h2 id="explore-title">{home.data.home.explore.heading}</h2>
-        </div>
-        <p>{home.data.home.explore.text}</p>
-      </div>
-      <div class="page-link-grid">
-        {site.nav.map((item, index) => (
-          <a class="page-link-card" href={item.href}>
-            <span>{String(index + 1).padStart(2, "0")}</span>
-            <strong>{item.label}</strong>
-            <b aria-hidden="true">↗</b>
-          </a>
-        ))}
-      </div>
-    </div>
-  </section>
 </SiteLayout>

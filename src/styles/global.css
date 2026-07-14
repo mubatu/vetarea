@@ -620,50 +620,6 @@ a {
   line-height: 1.75;
 }
 
-.explore-section {
-  background: var(--paper);
-}
-
-.page-link-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 14px;
-}
-
-.page-link-card {
-  min-height: 176px;
-  display: grid;
-  align-content: space-between;
-  padding: 22px;
-  border: 1px solid var(--line);
-  border-radius: 22px;
-  background: var(--white);
-  transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
-}
-
-.page-link-card:hover {
-  border-color: #b8cbd6;
-  box-shadow: 0 20px 45px rgba(8,57,106,.08);
-  transform: translateY(-4px);
-}
-
-.page-link-card span {
-  color: #9aabb5;
-  font-size: 10px;
-  font-weight: 850;
-}
-
-.page-link-card strong {
-  color: var(--navy-deep);
-  font-size: 18px;
-  letter-spacing: -.02em;
-}
-
-.page-link-card b {
-  color: var(--red);
-  font-size: 16px;
-}
-
 .service-card {
   min-height: 310px;
   display: flex;
@@ -1115,7 +1071,6 @@ a {
   .section { padding: 88px 0; }
   .split-heading { grid-template-columns: 1fr; gap: 22px; margin-bottom: 40px; }
   .page-hero { padding: 74px 0 68px; }
-  .page-link-grid { grid-template-columns: repeat(2, 1fr); }
   .services-grid { grid-template-columns: repeat(2, 1fr); }
   .about-grid { grid-template-columns: 1fr; }
   .about-visual { min-height: 560px; }
@@ -1149,8 +1104,6 @@ a {
   .section { padding: 74px 0; }
   .section-heading h2, .about-copy h1, .about-copy h2, .contact-copy h1, .contact-copy h2, .faq-heading h1, .faq-heading h2 { font-size: 38px; }
   .page-hero h1 { font-size: clamp(42px, 13vw, 55px); }
-  .page-link-grid { grid-template-columns: 1fr; }
-  .page-link-card { min-height: 132px; }
   .services-grid { grid-template-columns: 1fr; }
   .service-card { min-height: 285px; }
   .about-visual { min-height: 430px; }

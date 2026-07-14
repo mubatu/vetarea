@@ -31,11 +31,6 @@ const pages = defineCollection({
         text: z.string(),
         href: z.string(),
       })),
-      explore: z.object({
-        eyebrow: z.string(),
-        heading: z.string(),
-        text: z.string(),
-      }),
     }).optional(),
     serviceList: z.object({
       ctaLabel: z.string(),

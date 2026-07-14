@@ -17,6 +17,7 @@ test("builds the Turkish static pages", async () => {
   assert.match(html, /src="\/logo\.(svg|png|webp)"/);
   assert.match(html, /href="\/"[^>]*>Ana Sayfa<\/a>/);
   assert.match(html, /href="\/hizmetler\/"/);
+  assert.doesNotMatch(html, /İhtiyacınız olan sayfaya geçin/);
   assert.doesNotMatch(html, /Her yaşam evresine/);
   assert.match(services, /<title>Hizmetler \| VetArea<\/title>/i);
   assert.match(services, /Genel muayene/);
