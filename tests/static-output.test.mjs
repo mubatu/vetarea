@@ -24,7 +24,7 @@ test("builds the Turkish static pages", async () => {
   assert.match(about, /Aynı dikkat/);
   assert.match(team, /Cihan Culha/);
   assert.match(faq, /Randevu almadan gelebilir miyim/);
-  assert.match(contact, /\+90 \(312\) 223 80 83/);
+  assert.match(contact, /\+90 \(538\) 253 80 83/);
   assert.match(contact, /Her gün 09\.00-21\.00/);
   assert.doesNotMatch(html, /7\/24|7 \/ 24|7 gün,? 24 saat/i);
   assert.match(html, /https:\/\/vetarea\.com\.tr\/og\.png/);

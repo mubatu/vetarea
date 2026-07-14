@@ -17,12 +17,12 @@ export const site = {
   },
   themeColor: "#08396a",
   phone: {
-    label: "+90 (312) 223 80 83",
-    href: "tel:+903122238083",
+    label: "+90 (538) 253 80 83",
+    href: "tel:+905382538083",
   },
   whatsapp: {
-    label: "+90 (554) 243 00 33",
-    href: "https://wa.me/905542430033?text=Merhaba%20Vet%20Area%2C%20randevu%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum.",
+    label: "+90 (538) 253 80 83",
+    href: "https://wa.me/905382538083?text=Merhaba%20Vet%20Area%2C%20randevu%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum.",
   },
   address: {
     short: "Emek, Çankaya",
