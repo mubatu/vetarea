@@ -3,7 +3,6 @@ import { glob } from "astro/loaders";
 import { z } from "astro/zod";
 
 const heroSchema = z.object({
-  eyebrow: z.string(),
   heading: z.string(),
   highlight: z.string().optional(),
   text: z.string(),

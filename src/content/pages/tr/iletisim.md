@@ -2,7 +2,6 @@
 title: "İletişim | VetArea"
 description: "VetArea telefon, WhatsApp, adres ve yol tarifi bilgileri."
 hero:
-  eyebrow: "İletişim"
   heading: |
     Bir telefon
     kadar yakınız.

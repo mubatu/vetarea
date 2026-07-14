@@ -1,6 +1,6 @@
 ---
 import { getCollection, getEntry } from "astro:content";
-import { ArrowUpRight, Circle } from "@lucide/astro";
+import { ArrowUpRight } from "@lucide/astro";
 import { site } from "../../data/site.tr";
 import SiteLayout from "../../layouts/SiteLayout.astro";
 
@@ -34,7 +34,6 @@ if (unlistedServices.length > 0) {
 <SiteLayout title={page.data.title} description={page.data.description} activePath="/hizmetler/">
   <section class="page-hero">
     <div class="shell page-hero-inner">
-      <p class="eyebrow"><Circle aria-hidden="true" size={9} fill="currentColor" strokeWidth={0} /> {page.data.hero.eyebrow}</p>
       <h1>{page.data.hero.heading}</h1>
       <p>{page.data.hero.text}</p>
     </div>

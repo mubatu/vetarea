@@ -2,7 +2,6 @@
 title: "Sık Sorulanlar | VetArea"
 description: "VetArea'ya gelmeden önce randevu, acil durum ve ilk muayene hakkında merak edilenler."
 hero:
-  eyebrow: "Sık sorulanlar"
   heading: |
     Gelmeden önce
     merak ettikleriniz.

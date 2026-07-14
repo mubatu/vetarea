@@ -284,29 +284,6 @@ a {
   padding: 26px 0;
 }
 
-.eyebrow {
-  margin: 0 0 22px;
-  color: var(--navy);
-  font-size: 11px;
-  font-weight: 850;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-}
-
-.eyebrow svg {
-  margin-right: 8px;
-  color: var(--red);
-  vertical-align: 1px;
-}
-
-.eyebrow.light {
-  color: #e1edf4;
-}
-
-.eyebrow.dark {
-  color: var(--navy);
-}
-
 .hero h1,
 .page-hero h1,
 .section h2 {
@@ -619,7 +596,7 @@ a {
   max-width: 840px;
 }
 
-.page-hero-inner > p:not(.eyebrow) {
+.page-hero-inner > p {
   max-width: 620px;
   margin: 24px 0 0;
   color: var(--muted);
@@ -805,7 +782,6 @@ a {
   text-align: center;
 }
 
-.centered-heading .eyebrow { margin-bottom: 18px; }
 .centered-heading > p:last-child { margin: 18px 0 0; color: var(--muted); font-size: 14px; }
 
 .team-grid {
@@ -873,7 +849,7 @@ a {
   align-items: center;
 }
 
-.contact-copy > p:not(.eyebrow) {
+.contact-copy > p {
   max-width: 510px;
   margin: 25px 0;
   color: #b6c9d6;
@@ -958,7 +934,7 @@ a {
   top: 140px;
 }
 
-.faq-heading > p:not(.eyebrow) {
+.faq-heading > p {
   margin: 22px 0;
   color: var(--muted);
   font-size: 13px;
@@ -1099,7 +1075,6 @@ a {
   .brand-copy strong { font-size: 15px; }
   .brand-copy small { font-size: 8px; }
   .hero { padding-top: 26px; }
-  .eyebrow { margin-bottom: 16px; }
   .hero h1 { font-size: clamp(42px, 13vw, 55px); }
   .hero-lead { margin: 22px 0; font-size: 15px; line-height: 1.68; }
   .hero-actions { align-items: stretch; flex-direction: column; gap: 16px; }

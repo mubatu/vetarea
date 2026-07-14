@@ -2,7 +2,6 @@
 title: "Hakkımızda | VetArea"
 description: "VetArea'nın sakin, açık ve dostunuzun ihtiyacına göre şekillenen veterinerlik yaklaşımı."
 hero:
-  eyebrow: "VetArea hakkında"
   heading: |
     Aynı dikkat,
     her ziyarette.

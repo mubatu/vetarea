@@ -24,6 +24,9 @@ test("builds the Turkish static pages", async () => {
   assert.doesNotMatch(html, />06<\/span>/);
   assert.doesNotMatch(html, /İhtiyacınız olan sayfaya geçin/);
   assert.doesNotMatch(html, /Her yaşam evresine/);
+  for (const page of [html, services, about, team, faq, contact]) {
+    assert.doesNotMatch(page, /class="eyebrow/);
+  }
   assert.match(services, /<title>Hizmetler \| VetArea<\/title>/i);
   assert.match(services, /Muayene \(teşhis - tedavi\)/);
   assert.match(services, /src="https:\/\/images\.unsplash\.com\/photo-[^"]+"/);

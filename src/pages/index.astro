@@ -1,6 +1,6 @@
 ---
 import { getCollection, getEntry } from "astro:content";
-import { ArrowUpRight, Circle, MapPin, Phone, Plus, Users } from "@lucide/astro";
+import { ArrowUpRight, MapPin, Phone, Plus, Users } from "@lucide/astro";
 import { site } from "../data/site.tr";
 import SiteLayout from "../layouts/SiteLayout.astro";
 
@@ -22,7 +22,6 @@ const getSharedHref = (href: string) => {
   <section class="hero" id="top">
     <div class="shell hero-grid">
       <div class="hero-copy">
-        <p class="eyebrow"><Circle aria-hidden="true" size={9} fill="currentColor" strokeWidth={0} /> {home.data.hero.eyebrow}</p>
         <h1>{home.data.hero.heading}<br /> <em>{home.data.hero.highlight}</em></h1>
         <p class="hero-lead">{home.data.hero.text}</p>
         <div class="hero-actions">
