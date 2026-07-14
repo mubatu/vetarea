@@ -7,6 +7,7 @@ export const site = {
     subtitle: "Emek Veteriner Kliniği",
     homeAriaLabel: "VetArea ana sayfa",
     logoSrc: "/logo.png",
+    faviconSrc: "/logo.png",
   },
   description:
     "Emek, Çankaya'da muayene, koruyucu sağlık, tanı ve cerrahi hizmetleri sunan veteriner kliniği.",
