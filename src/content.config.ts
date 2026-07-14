@@ -10,6 +10,11 @@ const heroSchema = z.object({
   imageAlt: z.string().optional(),
 });
 
+const imageSourceSchema = z.string().trim().refine(
+  (value) => value.startsWith("/") || z.string().url().safeParse(value).success,
+  "Must be an absolute URL or a public asset path that starts with /",
+);
+
 const pages = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./src/content/pages" }),
   schema: z.object({
@@ -71,7 +76,7 @@ const services = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string().trim().min(1),
-    image: z.string().url(),
+    image: imageSourceSchema,
     imageAlt: z.string().trim().min(1),
   }),
 });
