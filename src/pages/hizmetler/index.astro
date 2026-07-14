@@ -8,8 +8,27 @@ const page = await getEntry("pages", "tr/hizmetler");
 if (!page) throw new Error("Türkçe hizmetler sayfası içeriği bulunamadı.");
 if (!page.data.serviceList) throw new Error("Türkçe hizmetler kart ayarları bulunamadı.");
 
-const services = (await getCollection("services", ({ id }) => id.startsWith("tr/")))
-  .sort((a, b) => a.data.order - b.data.order);
+const serviceList = await getEntry("serviceLists", "tr/services");
+if (!serviceList) throw new Error("Türkçe hizmet sıralaması bulunamadı.");
+
+const serviceEntries = await getCollection("services", ({ id }) => id.startsWith("tr/"));
+const servicesById = new Map(serviceEntries.map((service) => [service.id, service]));
+const orderedIds = serviceList.data.services.map((serviceId) => `tr/${serviceId}`);
+
+if (new Set(orderedIds).size !== orderedIds.length) {
+  throw new Error("Hizmet sıralamasında aynı hizmet birden fazla kez kullanılmış.");
+}
+
+const services = orderedIds.map((serviceId) => {
+  const service = servicesById.get(serviceId);
+  if (!service) throw new Error(`Hizmet sıralamasındaki \"${serviceId}\" içeriği bulunamadı.`);
+  return service;
+});
+
+const unlistedServices = serviceEntries.filter((service) => !orderedIds.includes(service.id));
+if (unlistedServices.length > 0) {
+  throw new Error(`Sıralamaya eklenmemiş hizmetler var: ${unlistedServices.map(({ id }) => id).join(", ")}`);
+}
 ---
 
 <SiteLayout title={page.data.title} description={page.data.description} activePath="/hizmetler/">
@@ -26,7 +45,16 @@ const services = (await getCollection("services", ({ id }) => id.startsWith("tr/
       <div class="services-grid">
         {services.map((service) => (
           <article class="service-card">
-            <span>{String(service.data.order).padStart(2, "0")}</span>
+            <div class="service-card-image">
+              <img
+                src={service.data.image}
+                alt={service.data.imageAlt}
+                width="1200"
+                height="800"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
             <h3>{service.data.title}</h3>
             <p>{service.data.description}</p>
             <a href={site.whatsapp.href} aria-label={`${service.data.title} ${page.data.serviceList.ctaAriaSuffix}`}>

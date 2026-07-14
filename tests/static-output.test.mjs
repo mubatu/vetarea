@@ -25,7 +25,10 @@ test("builds the Turkish static pages", async () => {
   assert.doesNotMatch(html, /İhtiyacınız olan sayfaya geçin/);
   assert.doesNotMatch(html, /Her yaşam evresine/);
   assert.match(services, /<title>Hizmetler \| VetArea<\/title>/i);
-  assert.match(services, /Genel muayene/);
+  assert.match(services, /Muayene \(teşhis - tedavi\)/);
+  assert.match(services, /src="https:\/\/images\.unsplash\.com\/photo-[^"]+"/);
+  assert.match(services, /alt="Veteriner hekim tarafından muayene edilen bir köpek"/);
+  assert.doesNotMatch(services, />0[1-9]<\/span>/);
   assert.match(about, /Aynı dikkat/);
   assert.match(team, /Cihan Culha/);
   assert.match(faq, /Randevu almadan gelebilir miyim/);

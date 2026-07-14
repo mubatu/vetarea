@@ -70,9 +70,17 @@ const pages = defineCollection({
 const services = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./src/content/services" }),
   schema: z.object({
-    order: z.number().int().positive(),
     title: z.string(),
-    description: z.string(),
+    description: z.string().trim().min(1),
+    image: z.string().url(),
+    imageAlt: z.string().trim().min(1),
+  }),
+});
+
+const serviceLists = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/service-lists" }),
+  schema: z.object({
+    services: z.array(z.string().regex(/^[a-z0-9-]+$/)).min(1),
   }),
 });
 
@@ -86,4 +94,4 @@ const team = defineCollection({
   }),
 });
 
-export const collections = { pages, services, team };
+export const collections = { pages, services, serviceLists, team };

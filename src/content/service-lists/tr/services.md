@@ -1,0 +1,22 @@
+---
+# Hizmet kartlarının sayfadaki sırasını bu listeyi düzenleyerek değiştirin.
+services:
+  - muayene
+  - cerrahi
+  - ortopedi
+  - dogum
+  - kan
+  - virolojik
+  - rontgen
+  - ultrason
+  - endoskopi
+  - kardiyografi
+  - tomografi
+  - dermatoloji
+  - goz
+  - dis
+  - koruyucu
+  - yogun
+  - kuafor
+  - kuduz
+---

@@ -13,6 +13,10 @@ Sayfa başlıkları, sekme başlıkları, açıklamalar, hero metinleri ve sayfa
 
 Hizmet kartları `src/content/services/tr/`, ekip üyeleri `src/content/team/tr/`, sık sorulan sorular ise `src/data/site.tr.ts` altında tutulur.
 
+Hizmetlerin sayfadaki sırası tek bir dosyadan yönetilir: `src/content/service-lists/tr/services.md`. Bu dosyadaki `services` listesinde yer alan dosya adlarını yukarı veya aşağı taşımanız yeterlidir. Her hizmet listede tam olarak bir kez bulunmalıdır.
+
+Her hizmetin başlığı, açıklaması, görsel bağlantısı ve görsel alternatif metni kendi `src/content/services/tr/*.md` dosyasındadır. Yeni bir hizmet eklerken ilgili Markdown dosyasını oluşturup dosya adını `services.md` sıralamasına da ekleyin.
+
 Sayfa şablonları `src/pages/` altındadır. Normal içerik düzenlemelerinde bu dosyalara dokunulmamalıdır:
 
 - Ana sayfa: `src/pages/index.astro`
