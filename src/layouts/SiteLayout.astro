@@ -54,7 +54,7 @@ const isActive = (href: string) => activePath === href || Astro.url.pathname ===
   <footer class="site-footer">
     <div class="shell footer-main">
       <div>
-        <Brand />
+        <Brand logoSrc={site.brand.footerLogoSrc} />
         <p>{site.ui.footerDescription}</p>
       </div>
       <div class="footer-links">

@@ -1,12 +1,17 @@
 ---
 import { site } from "../data/site.tr";
 
-const { href = "/" } = Astro.props;
+interface Props {
+  href?: string;
+  logoSrc?: string;
+}
+
+const { href = "/", logoSrc = site.brand.logoSrc } = Astro.props;
 ---
 
 <a class="brand" href={href} aria-label={site.brand.homeAriaLabel}>
   <span class="brand-mark" aria-hidden="true">
-    <img src={site.brand.logoSrc} alt="" width="42" height="42" />
+    <img src={logoSrc} alt="" width="42" height="42" />
   </span>
   <span class="brand-copy">
     <strong>{site.brand.displayName}</strong>

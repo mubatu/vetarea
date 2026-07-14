@@ -33,7 +33,7 @@ Sayfa şablonları `src/pages/` altındadır. Normal içerik düzenlemelerinde b
 3. Çalışma saatlerindeki değişiklikleri aynı gün güncelleyin.
 4. Yeni bir hizmet eklerken tıbbi kapsamı ve kullanılan ifadeleri klinik ekibine onaylatın.
 5. Ekip isimleri veya unvanları değiştiğinde `src/content/team/tr/` altındaki ilgili dosyayı güncelleyin.
-6. Logo değiştiğinde dosyayı `public/` altına koyun ve `src/data/site.tr.ts` içindeki `brand.logoSrc` değerini güncelleyin.
+6. Logo değiştiğinde dosyayı `public/` altına koyun ve `src/data/site.tr.ts` içindeki `brand.logoSrc` değerini güncelleyin. Footer için ayrı beyaz logo kullanılacaksa `brand.footerLogoSrc` değerini güncelleyin.
 7. Klinik fotoğrafları hazır olduğunda sayfa Markdown dosyalarındaki stok fotoğraf URL'lerini optimize edilmiş WebP veya AVIF dosyalarıyla değiştirin.
 
 İngilizce sayfalar eklenene kadar Türkçe içerik varsayılan ve tek dil olarak kalır.

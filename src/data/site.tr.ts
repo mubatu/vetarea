@@ -7,6 +7,7 @@ export const site = {
     subtitle: "Emek Veteriner Kliniği",
     homeAriaLabel: "VetArea ana sayfa",
     logoSrc: "/logo.png",
+    footerLogoSrc: "/logo-white.png",
     faviconSrc: "/logo.png",
   },
   description:
