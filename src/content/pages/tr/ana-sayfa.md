@@ -1,5 +1,5 @@
 ---
-title: "Vet Area | Emek Veteriner Kliniği"
+title: "VetArea | Emek Veteriner"
 description: "Emek, Çankaya'da muayene, koruyucu sağlık, tanı ve cerrahi hizmetleri sunan veteriner kliniği."
 hero:
   eyebrow: "Emek'in mahalle kliniği"
