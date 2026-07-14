@@ -8,7 +8,7 @@ hero:
   image: "https://images.unsplash.com/photo-1770836037289-e00e5f351d11?auto=format&fit=crop&fm=jpg&q=84&w=1800"
   imageAlt: "Veteriner kliniğinde muayene edilen bir köpek"
 home:
-  primaryActionLabel: "Randevu oluştur"
+  primaryActionLabel: "Randevu al"
   phoneActionLabel: "Bizi arayın"
   noteStrong: "Güvendiğiniz ekip,"
   noteText: "ihtiyaç duyduğunuz anda burada."
