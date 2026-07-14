@@ -48,7 +48,7 @@ export const site = {
   },
   nav: [
     { label: "Ana Sayfa", href: "/" },
-    { label: "Hizmetler", href: "/hizmetler/" },
+    { label: "Hizmetlerimiz", href: "/hizmetlerimiz/" },
     { label: "Hakkımızda", href: "/hakkimizda/" },
     { label: "Ekibimiz", href: "/ekibimiz/" },
     { label: "Sık Sorulanlar", href: "/sss/" },

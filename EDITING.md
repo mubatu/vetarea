@@ -2,10 +2,10 @@
 
 Sitedeki tekrar kullanılan klinik bilgileri `src/data/site.tr.ts` dosyasında tutulur. Telefon, WhatsApp, adres, çalışma saatleri, menü bağlantıları, logo yolu, üst duyuru, footer metinleri, sosyal paylaşım görsel bilgileri ve yapılandırılmış adres bilgileri bu dosyadan güncellenmelidir.
 
-Sayfa başlıkları, sekme başlıkları, açıklamalar, hero metinleri ve sayfa içi çağrı metinleri `src/content/pages/tr/` altındaki Markdown dosyalarındadır. Hizmetler sayfasında hero metni gösterilmez; bu sayfada yalnızca hizmet kartı çağrı metinleri düzenlenir.
+Sayfa başlıkları, sekme başlıkları, açıklamalar, hero metinleri ve sayfa içi çağrı metinleri `src/content/pages/tr/` altındaki Markdown dosyalarındadır. Hizmetlerimiz sayfasında hero metni gösterilmez; bu sayfada yalnızca hizmet kartı çağrı metinleri düzenlenir.
 
 - Ana sayfa: `src/content/pages/tr/ana-sayfa.md`
-- Hizmetler sayfası: `src/content/pages/tr/hizmetler.md`
+- Hizmetlerimiz sayfası: `src/content/pages/tr/hizmetlerimiz.md`
 - Hakkımızda sayfası: `src/content/pages/tr/hakkimizda.md`
 - Ekibimiz sayfası: `src/content/pages/tr/ekibimiz.md`
 - Sık Sorulanlar sayfası: `src/content/pages/tr/sss.md`
@@ -20,7 +20,7 @@ Her hizmetin başlığı, açıklaması, görsel bağlantısı ve görsel altern
 Sayfa şablonları `src/pages/` altındadır. Normal içerik düzenlemelerinde bu dosyalara dokunulmamalıdır:
 
 - Ana sayfa: `src/pages/index.astro`
-- Hizmetler: `src/pages/hizmetler/index.astro`
+- Hizmetlerimiz: `src/pages/hizmetlerimiz/index.astro`
 - Hakkımızda: `src/pages/hakkimizda/index.astro`
 - Ekibimiz: `src/pages/ekibimiz/index.astro`
 - Sık Sorulanlar: `src/pages/sss/index.astro`

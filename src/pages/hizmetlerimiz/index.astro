@@ -4,9 +4,9 @@ import { ArrowUpRight } from "@lucide/astro";
 import { site } from "../../data/site.tr";
 import SiteLayout from "../../layouts/SiteLayout.astro";
 
-const page = await getEntry("pages", "tr/hizmetler");
-if (!page) throw new Error("Türkçe hizmetler sayfası içeriği bulunamadı.");
-if (!page.data.serviceList) throw new Error("Türkçe hizmetler kart ayarları bulunamadı.");
+const page = await getEntry("pages", "tr/hizmetlerimiz");
+if (!page) throw new Error("Türkçe hizmetlerimiz sayfası içeriği bulunamadı.");
+if (!page.data.serviceList) throw new Error("Türkçe hizmetlerimiz kart ayarları bulunamadı.");
 
 const serviceList = await getEntry("serviceLists", "tr/services");
 if (!serviceList) throw new Error("Türkçe hizmet sıralaması bulunamadı.");
@@ -31,7 +31,7 @@ if (unlistedServices.length > 0) {
 }
 ---
 
-<SiteLayout title={page.data.title} description={page.data.description} activePath="/hizmetler/">
+<SiteLayout title={page.data.title} description={page.data.description} activePath="/hizmetlerimiz/">
   <section class="section services-section">
     <div class="shell">
       <div class="services-grid">

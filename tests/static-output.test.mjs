@@ -4,7 +4,7 @@ import test from "node:test";
 
 test("builds the Turkish static pages", async () => {
   const html = await readFile(new URL("../dist/index.html", import.meta.url), "utf8");
-  const services = await readFile(new URL("../dist/hizmetler/index.html", import.meta.url), "utf8");
+  const services = await readFile(new URL("../dist/hizmetlerimiz/index.html", import.meta.url), "utf8");
   const about = await readFile(new URL("../dist/hakkimizda/index.html", import.meta.url), "utf8");
   const team = await readFile(new URL("../dist/ekibimiz/index.html", import.meta.url), "utf8");
   const faq = await readFile(new URL("../dist/sss/index.html", import.meta.url), "utf8");
@@ -18,7 +18,7 @@ test("builds the Turkish static pages", async () => {
   assert.match(html, /src="\/logo-white\.png"/);
   assert.match(html, /<link rel="icon" href="\/logo\.png"/);
   assert.match(html, /href="\/"[^>]*>Ana Sayfa<\/a>/);
-  assert.match(html, /href="\/hizmetler\/"/);
+  assert.match(html, /href="\/hizmetlerimiz\/"[^>]*>Hizmetlerimiz<\/a>/);
   assert.match(html, /href="\/ekibimiz\/"[^>]*>[\s\S]*lucide-users/i);
   assert.match(html, /href="\/iletisim\/"[^>]*>[\s\S]*lucide-map-pin/i);
   assert.doesNotMatch(html, />02<\/span>/);
@@ -29,7 +29,7 @@ test("builds the Turkish static pages", async () => {
   for (const page of [html, services, about, team, faq, contact]) {
     assert.doesNotMatch(page, /class="eyebrow/);
   }
-  assert.match(services, /<title>Hizmetler \| VetArea<\/title>/i);
+  assert.match(services, /<title>Hizmetlerimiz \| VetArea<\/title>/i);
   assert.match(services, /Muayene \(teşhis - tedavi\)/);
   assert.match(services, /src="https:\/\/images\.unsplash\.com\/photo-[^"]+"/);
   assert.match(services, /src="\/pasaport\.jpeg"/);
