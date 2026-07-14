@@ -42,15 +42,18 @@ const pages = defineCollection({
       ctaAriaSuffix: z.string(),
     }).optional(),
     about: z.object({
-      image: z.string(),
-      imageAlt: z.string(),
-      imageCaption: z.string(),
+      images: z.array(z.object({
+        src: imageSourceSchema,
+        alt: z.string().trim().min(1),
+        caption: z.string().trim().min(1),
+      })).min(2),
       lead: z.string(),
       principles: z.array(z.object({
         title: z.string(),
         text: z.string(),
       })),
-      ctaLabel: z.string(),
+      teamHeading: z.string(),
+      teamText: z.string(),
     }).optional(),
     contact: z.object({
       intro: z.string(),
@@ -95,6 +98,8 @@ const team = defineCollection({
     name: z.string(),
     role: z.string(),
     initials: z.string().min(2).max(3),
+    image: imageSourceSchema.optional(),
+    imageAlt: z.string().trim().min(1).optional(),
   }),
 });
 

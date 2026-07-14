@@ -6,12 +6,13 @@ Sayfa başlıkları, sekme başlıkları, açıklamalar, hero metinleri ve sayfa
 
 - Ana sayfa: `src/content/pages/tr/ana-sayfa.md`
 - Hizmetlerimiz sayfası: `src/content/pages/tr/hizmetlerimiz.md`
-- Hakkımızda sayfası: `src/content/pages/tr/hakkimizda.md`
-- Ekibimiz sayfası: `src/content/pages/tr/ekibimiz.md`
+- Hakkımızda sayfası: `src/content/pages/tr/hakkimizda.md` (ekip bölümü başlığı ve açıklaması dahil)
 - Sık Sorulanlar sayfası: `src/content/pages/tr/sss.md`
 - İletişim sayfası: `src/content/pages/tr/iletisim.md`
 
-Hizmet kartları `src/content/services/tr/`, ekip üyeleri `src/content/team/tr/`, sık sorulan sorular ise `src/data/site.tr.ts` altında tutulur.
+Hizmet kartları `src/content/services/tr/`, Hakkımızda sayfasının altındaki ekip üyeleri `src/content/team/tr/`, sık sorulan sorular ise `src/data/site.tr.ts` altında tutulur. Ekip üyesi fotoğrafı eklemek için görseli `public/` altına koyup ilgili ekip Markdown dosyasına `image` ve `imageAlt` alanlarını ekleyin.
+
+Hakkımızda sayfasındaki klinik görselleri `src/content/pages/tr/hakkimizda.md` içindeki `about.images` listesinden yönetilir. İlk görsel üstte, ikinci görsel altta gösterilir.
 
 Hizmetlerin sayfadaki sırası tek bir dosyadan yönetilir: `src/content/service-lists/tr/services.md`. Bu dosyadaki `services` listesinde yer alan dosya adlarını yukarı veya aşağı taşımanız yeterlidir. Her hizmet listede tam olarak bir kez bulunmalıdır.
 
@@ -22,7 +23,6 @@ Sayfa şablonları `src/pages/` altındadır. Normal içerik düzenlemelerinde b
 - Ana sayfa: `src/pages/index.astro`
 - Hizmetlerimiz: `src/pages/hizmetlerimiz/index.astro`
 - Hakkımızda: `src/pages/hakkimizda/index.astro`
-- Ekibimiz: `src/pages/ekibimiz/index.astro`
 - Sık Sorulanlar: `src/pages/sss/index.astro`
 - İletişim: `src/pages/iletisim/index.astro`
 

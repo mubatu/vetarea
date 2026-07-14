@@ -50,7 +50,6 @@ export const site = {
     { label: "Ana Sayfa", href: "/" },
     { label: "Hizmetlerimiz", href: "/hizmetlerimiz/" },
     { label: "Hakkımızda", href: "/hakkimizda/" },
-    { label: "Ekibimiz", href: "/ekibimiz/" },
     { label: "Sık Sorulanlar", href: "/sss/" },
     { label: "İletişim", href: "/iletisim/" },
   ],

@@ -30,7 +30,6 @@ src/
 │   │       ├── ana-sayfa.md
 │   │       ├── hakkimizda.md
 │   │       ├── hizmetlerimiz.md
-│   │       └── ekibimiz.md
 │   │       └── iletisim.md
 │   ├── services/
 │   │   └── tr/
@@ -38,7 +37,7 @@ src/
 │   │       ├── asilama.md
 │   │       └── cerrahi.md
 │   └── team/
-│       └── tr/
+│       └── tr/                # Hakkımızda sayfasındaki ekip bölümü
 │           ├── cihan-culha.md
 │           └── emin-bayram.md
 ├── data/

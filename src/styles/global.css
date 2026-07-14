@@ -565,6 +565,7 @@ a {
 }
 
 .section-heading h2,
+.centered-heading h2,
 .about-copy h1,
 .about-copy h2,
 .contact-copy h1,
@@ -695,18 +696,25 @@ a {
 }
 
 .about-visual {
-  position: relative;
+  display: grid;
+  grid-template-rows: repeat(2, minmax(0, 1fr));
   min-height: 720px;
 }
 
-.about-visual::after {
+.about-image-card {
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+}
+
+.about-image-card::after {
   content: "";
   position: absolute;
   inset: 0;
   background: linear-gradient(180deg, transparent 55%, rgba(3,27,49,.62));
 }
 
-.about-visual img {
+.about-image-card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -779,16 +787,6 @@ a {
   font-size: 13px;
 }
 
-.button-light {
-  align-self: flex-start;
-  background: var(--white);
-  border-color: var(--white);
-  color: var(--navy);
-  box-shadow: none;
-}
-
-.button-light:hover { background: #e9f1f5; }
-
 .team-section {
   background: #eef3f5;
 }
@@ -799,18 +797,24 @@ a {
   text-align: center;
 }
 
-.centered-heading > p:last-child { margin: 18px 0 0; color: var(--muted); font-size: 14px; }
+.centered-heading > p:last-child {
+  margin: 22px 0 0;
+  color: var(--muted);
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.75;
+}
 
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 460px));
+  grid-template-columns: repeat(2, minmax(0, 400px));
   justify-content: center;
   gap: 18px;
 }
 
 .team-card {
   position: relative;
-  min-height: 260px;
+  aspect-ratio: 1 / 1;
   display: flex;
   align-items: flex-end;
   gap: 22px;
@@ -833,15 +837,43 @@ a {
 .team-card-red { background: linear-gradient(135deg, #d81623, #f03c48); }
 .team-card-blue { background: linear-gradient(135deg, #08396a, #12558e); }
 
+.team-card-photo {
+  background: #10283e;
+}
+
+.team-card-photo::before {
+  z-index: 1;
+  inset: 0;
+  width: auto;
+  height: auto;
+  border: 0;
+  border-radius: 0;
+  background: linear-gradient(180deg, rgba(6, 43, 80, .08) 30%, rgba(6, 43, 80, .78) 100%);
+}
+
+.team-card-photo::after {
+  display: none;
+}
+
+.team-card-image {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
 .team-initial {
   position: relative;
   z-index: 1;
   width: 96px;
   height: 96px;
-  display: grid;
-  place-items: center;
   border: 1px solid rgba(255,255,255,.25);
   border-radius: 50%;
+  display: grid;
+  place-items: center;
   background: rgba(255,255,255,.11);
   font-size: 25px;
   font-weight: 800;
@@ -849,10 +881,9 @@ a {
   backdrop-filter: blur(6px);
 }
 
-.team-card > div:nth-child(2) { position: relative; z-index: 1; }
+.team-card > div:nth-child(2) { position: relative; z-index: 2; }
 .team-card p { margin: 0 0 3px; color: rgba(255,255,255,.68); font-size: 10px; font-weight: 750; text-transform: uppercase; letter-spacing: .1em; }
 .team-card h3 { margin: 0; font-size: 21px; }
-.team-card > span { position: absolute; z-index: 1; top: 23px; right: 27px; color: rgba(255,255,255,.55); font-size: 11px; font-weight: 800; }
 
 .contact-section {
   background: var(--navy);
@@ -1118,7 +1149,7 @@ a {
   .trust-grid > a { padding: 15px 18px; }
   .section { padding: 74px 0; }
   .section.services-section { padding-top: 32px; }
-  .section-heading h2, .about-copy h1, .about-copy h2, .contact-copy h1, .contact-copy h2, .faq-heading h1, .faq-heading h2 { font-size: 38px; }
+  .section-heading h2, .centered-heading h2, .about-copy h1, .about-copy h2, .contact-copy h1, .contact-copy h2, .faq-heading h1, .faq-heading h2 { font-size: 38px; }
   .page-hero h1 { font-size: clamp(42px, 13vw, 55px); }
   .services-grid { grid-template-columns: 1fr; }
   .service-card { min-height: 420px; }
@@ -1126,7 +1157,7 @@ a {
   .image-caption { left: 23px; bottom: 22px; }
   .about-copy { padding-block: 70px; }
   .team-grid { grid-template-columns: 1fr; }
-  .team-card { min-height: 235px; padding: 24px; }
+  .team-card { padding: 24px; }
   .team-initial { width: 80px; height: 80px; }
   .contact-actions { flex-direction: column; }
   .contact-actions .button { width: 100%; }

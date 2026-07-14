@@ -23,7 +23,7 @@ home:
     - icon: "users"
       title: "Tanıdığınız hekimler"
       text: "Şeffaf ve sakin iletişim"
-      href: "/ekibimiz/"
+      href: "/hakkimizda/"
     - icon: "map-pin"
       title: "Emek, Çankaya"
       text: "Merkezi ve kolay ulaşım"

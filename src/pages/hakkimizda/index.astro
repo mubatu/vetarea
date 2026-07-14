@@ -1,21 +1,26 @@
 ---
-import { getEntry } from "astro:content";
-import { SquareArrowOutUpRight } from "@lucide/astro";
+import { getCollection, getEntry } from "astro:content";
 import LineBreakText from "../../components/LineBreakText.astro";
-import { site } from "../../data/site.tr";
 import SiteLayout from "../../layouts/SiteLayout.astro";
 
 const page = await getEntry("pages", "tr/hakkimizda");
 if (!page) throw new Error("Türkçe hakkımızda sayfası içeriği bulunamadı.");
 if (!page.data.about) throw new Error("Türkçe hakkımızda detayları bulunamadı.");
+
+const team = (await getCollection("team", ({ id }) => id.startsWith("tr/")))
+  .sort((a, b) => a.data.order - b.data.order);
 ---
 
 <SiteLayout title={page.data.title} description={page.data.description} activePath="/hakkimizda/">
   <section class="about-section">
     <div class="shell about-grid">
       <div class="about-visual">
-        <img src={page.data.about.image} alt={page.data.about.imageAlt} loading="lazy" />
-        <p class="image-caption">{page.data.about.imageCaption}</p>
+        {page.data.about.images.map((image) => (
+          <figure class="about-image-card">
+            <img src={image.src} alt={image.alt} loading="lazy" />
+            <figcaption class="image-caption">{image.caption}</figcaption>
+          </figure>
+        ))}
       </div>
       <div class="about-copy">
         <h1><LineBreakText text={page.data.hero.heading} /></h1>
@@ -25,7 +30,27 @@ if (!page.data.about) throw new Error("Türkçe hakkımızda detayları bulunama
             <div><span>{String(index + 1).padStart(2, "0")}</span><p><strong>{item.title}</strong>{item.text}</p></div>
           ))}
         </div>
-        <a class="button button-light" href={site.whatsapp.href}>{page.data.about.ctaLabel} <SquareArrowOutUpRight aria-hidden="true" size={16} /></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section team-section">
+    <div class="shell">
+      <div class="centered-heading">
+        <h2><LineBreakText text={page.data.about.teamHeading} /></h2>
+        <p>{page.data.about.teamText}</p>
+      </div>
+      <div class="team-grid">
+        {team.map((member, index) => (
+          <article class:list={["team-card", index % 2 === 0 ? "team-card-red" : "team-card-blue", member.data.image && "team-card-photo"]}>
+            {member.data.image ? (
+              <img class="team-card-image" src={member.data.image} alt={member.data.imageAlt ?? member.data.name} loading="lazy" />
+            ) : (
+              <div class="team-initial">{member.data.initials}</div>
+            )}
+            <div><p>{member.data.role}</p><h3>{member.data.name}</h3></div>
+          </article>
+        ))}
       </div>
     </div>
   </section>
