@@ -19,4 +19,6 @@ services:
   - yogun
   - kuafor
   - kuduz
+  - mikrocip
+  - pasaport
 ---
