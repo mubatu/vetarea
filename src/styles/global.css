@@ -114,7 +114,7 @@ a {
 }
 
 .header-inner {
-  min-height: 86px;
+  min-height: 92px;
   display: flex;
   align-items: center;
   gap: 28px;
@@ -123,13 +123,13 @@ a {
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 13px;
+  gap: 14px;
   flex: 0 0 auto;
 }
 
 .brand-mark {
-  width: 52px;
-  height: 52px;
+  width: 60px;
+  height: 60px;
   display: grid;
   place-items: center;
   flex: 0 0 auto;
@@ -148,7 +148,7 @@ a {
 
 .brand-copy strong {
   color: var(--navy);
-  font-size: 21px;
+  font-size: 24px;
   font-weight: 850;
   letter-spacing: .06em;
 }
@@ -156,7 +156,7 @@ a {
 .brand-copy small {
   margin-top: 5px;
   color: #65798b;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: .04em;
   text-transform: uppercase;
@@ -1064,7 +1064,7 @@ a {
   .announcement-inner { min-height: 34px; }
   .announcement-inner > span { font-size: 10px; }
   .announcement a { display: none; }
-  .header-inner { min-height: 76px; }
+  .header-inner { min-height: 82px; }
   .desktop-nav, .header-cta { display: none; }
   .mobile-menu { display: block; position: relative; }
   .mobile-menu summary { min-height: 40px; display: grid; place-items: center; padding: 0 14px; border: 1px solid var(--line); border-radius: 10px; }
@@ -1101,9 +1101,9 @@ a {
   html { scroll-padding-top: 90px; }
   body { padding-bottom: 68px; }
   .shell { width: calc(100% - 32px); }
-  .brand-mark { width: 44px; height: 44px; border-radius: 11px 11px 11px 4px; font-size: 21px; }
-  .brand-copy strong { font-size: 17px; }
-  .brand-copy small { font-size: 9px; }
+  .brand-mark { width: 50px; height: 50px; border-radius: 11px 11px 11px 4px; font-size: 21px; }
+  .brand-copy strong { font-size: 19px; }
+  .brand-copy small { font-size: 10px; }
   .hero { padding-top: 26px; }
   .hero h1 { font-size: clamp(42px, 13vw, 55px); }
   .hero-lead { margin: 22px 0; font-size: 16px; line-height: 1.68; }
