@@ -13,6 +13,9 @@ test("builds the Turkish static pages", async () => {
   assert.match(html, /<html lang="tr">/i);
   assert.match(html, /<title>Vet Area \| Emek Veteriner Kliniği<\/title>/i);
   assert.match(html, /İyi bakılmak/);
+  assert.match(html, /href="\/"[^>]*aria-label="Vet Area ana sayfa"/);
+  assert.match(html, /src="\/logo\.svg"/);
+  assert.match(html, /href="\/"[^>]*>Ana Sayfa<\/a>/);
   assert.match(html, /href="\/hizmetler\/"/);
   assert.doesNotMatch(html, /Her yaşam evresine/);
   assert.match(services, /<title>Hizmetler \| Vet Area<\/title>/i);

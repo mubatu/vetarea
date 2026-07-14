@@ -1,11 +1,13 @@
 ---
-const { href = "#top" } = Astro.props;
+const { href = "/" } = Astro.props;
 ---
 
 <a class="brand" href={href} aria-label="Vet Area ana sayfa">
-  <span class="brand-mark" aria-hidden="true">V</span>
+  <span class="brand-mark" aria-hidden="true">
+    <img src="/logo.png" alt="" width="42" height="42" />
+  </span>
   <span class="brand-copy">
-    <strong>VET AREA</strong>
+    <strong>VetArea</strong>
     <small>Emek Veteriner Kliniği</small>
   </span>
 </a>

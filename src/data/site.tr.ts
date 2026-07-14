@@ -21,6 +21,7 @@ export const site = {
   },
   hours: "7 gün, 24 saat",
   nav: [
+    { label: "Ana Sayfa", href: "/" },
     { label: "Hizmetler", href: "/hizmetler/" },
     { label: "Hakkımızda", href: "/hakkimizda/" },
     { label: "Ekibimiz", href: "/ekibimiz/" },
