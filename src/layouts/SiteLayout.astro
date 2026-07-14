@@ -1,5 +1,5 @@
 ---
-import { Circle, MapPin, MessageCircle, Phone, SquareArrowOutUpRight } from "@lucide/astro";
+import { Circle, Phone, SquareArrowOutUpRight } from "@lucide/astro";
 import Brand from "../components/Brand.astro";
 import { site } from "../data/site.tr";
 import BaseLayout from "./BaseLayout.astro";
@@ -70,7 +70,7 @@ const isActive = (href: string) => activePath === href || Astro.url.pathname ===
 
   <nav class="mobile-action-bar" aria-label={site.ui.mobileActionAriaLabel}>
     <a href={site.phone.href}><Phone aria-hidden="true" size={16} />{site.ui.mobileActions.phone}</a>
-    <a href={site.whatsapp.href}><MessageCircle aria-hidden="true" size={16} />{site.ui.mobileActions.whatsapp}</a>
-    <a href={site.address.maps}><MapPin aria-hidden="true" size={16} />{site.ui.mobileActions.directions}</a>
+    <a href={site.whatsapp.href}><img class="mobile-action-logo" src="/whatsapp.png" alt="" aria-hidden="true" />{site.ui.mobileActions.whatsapp}</a>
+    <a href={site.address.maps}><img class="mobile-action-logo" src="/gmaps.png" alt="" aria-hidden="true" />{site.ui.mobileActions.directions}</a>
   </nav>
 </BaseLayout>

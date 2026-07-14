@@ -22,6 +22,9 @@ test("builds the Turkish static pages", async () => {
   assert.match(html, /href="\/hakkimizda\/"[^>]*>[\s\S]*lucide-users/i);
   assert.doesNotMatch(html, /href="\/ekibimiz\/"/);
   assert.match(html, /href="\/iletisim\/"[^>]*>[\s\S]*lucide-map-pin/i);
+  assert.doesNotMatch(html, /lucide-message-circle/);
+  assert.match(html, /src="\/whatsapp\.png"/);
+  assert.match(html, /src="\/gmaps\.png"/);
   assert.doesNotMatch(html, />02<\/span>/);
   assert.doesNotMatch(html, />06<\/span>/);
   assert.doesNotMatch(html, /CC|EÇ|Güvendiğiniz ekip|ihtiyaç duyduğunuz anda burada/);
