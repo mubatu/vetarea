@@ -1085,15 +1085,25 @@ a {
   .open-card { right: 15px; }
   .trust-grid { grid-template-columns: 1fr; }
   .trust-grid > a { min-height: 93px; border-left: 0; border-bottom: 1px solid var(--line); }
+  .trust-grid > a + a { border-left: 0; }
   .trust-grid > a:last-child { border-bottom: 0; }
   .section { padding: 88px 0; }
   .section.services-section { padding-top: 44px; }
   .split-heading { grid-template-columns: 1fr; gap: 22px; margin-bottom: 40px; }
   .page-hero { padding: 74px 0 68px; }
   .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .about-section { overflow: visible; }
   .about-grid { grid-template-columns: 1fr; }
-  .about-visual { min-height: 560px; }
-  .about-copy { padding: 76px max(18px, calc((100vw - min(100% - 36px, 680px)) / 2)); }
+  .about-visual {
+    grid-template-rows: none;
+    min-height: 0;
+  }
+  .about-image-card {
+    min-height: 320px;
+  }
+  .about-copy {
+    padding: 72px 18px;
+  }
   .contact-grid, .faq-grid { grid-template-columns: 1fr; gap: 54px; }
   .faq-heading { position: static; }
   .map-card { min-height: 480px; }
@@ -1126,9 +1136,9 @@ a {
   .page-hero h1 { font-size: clamp(42px, 13vw, 55px); }
   .services-grid { grid-template-columns: 1fr; }
   .service-card { min-height: 420px; }
-  .about-visual { min-height: 430px; }
+  .about-image-card { min-height: 240px; }
   .image-caption { left: 23px; bottom: 22px; }
-  .about-copy { padding-block: 70px; }
+  .about-copy { padding: 62px 16px; }
   .team-grid { grid-template-columns: 1fr; }
   .team-card { padding: 24px; }
   .team-initial { width: 80px; height: 80px; }
