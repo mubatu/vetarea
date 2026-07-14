@@ -549,6 +549,10 @@ a {
   padding: 116px 0;
 }
 
+.section.services-section {
+  padding-top: 52px;
+}
+
 .section-heading h2,
 .about-copy h1,
 .about-copy h2,
@@ -1055,6 +1059,7 @@ a {
   .trust-grid > a { min-height: 93px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
   .trust-grid > a:last-child { border-bottom: 0; }
   .section { padding: 88px 0; }
+  .section.services-section { padding-top: 44px; }
   .split-heading { grid-template-columns: 1fr; gap: 22px; margin-bottom: 40px; }
   .page-hero { padding: 74px 0 68px; }
   .services-grid { grid-template-columns: repeat(2, 1fr); }
@@ -1087,6 +1092,7 @@ a {
   .paw-dots { top: -14px; left: -2px; transform: scale(.75) rotate(-18deg); }
   .trust-grid > a { padding: 15px 18px; }
   .section { padding: 74px 0; }
+  .section.services-section { padding-top: 32px; }
   .section-heading h2, .about-copy h1, .about-copy h2, .contact-copy h1, .contact-copy h2, .faq-heading h1, .faq-heading h2 { font-size: 38px; }
   .page-hero h1 { font-size: clamp(42px, 13vw, 55px); }
   .services-grid { grid-template-columns: 1fr; }

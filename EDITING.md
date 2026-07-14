@@ -2,7 +2,7 @@
 
 Sitedeki tekrar kullanılan klinik bilgileri `src/data/site.tr.ts` dosyasında tutulur. Telefon, WhatsApp, adres, çalışma saatleri, menü bağlantıları, logo yolu, üst duyuru, footer metinleri, sosyal paylaşım görsel bilgileri ve yapılandırılmış adres bilgileri bu dosyadan güncellenmelidir.
 
-Sayfa başlıkları, sekme başlıkları, açıklamalar, hero metinleri ve sayfa içi çağrı metinleri `src/content/pages/tr/` altındaki Markdown dosyalarındadır:
+Sayfa başlıkları, sekme başlıkları, açıklamalar, hero metinleri ve sayfa içi çağrı metinleri `src/content/pages/tr/` altındaki Markdown dosyalarındadır. Hizmetler sayfasında hero metni gösterilmez; bu sayfada yalnızca hizmet kartı çağrı metinleri düzenlenir.
 
 - Ana sayfa: `src/content/pages/tr/ana-sayfa.md`
 - Hizmetler sayfası: `src/content/pages/tr/hizmetler.md`

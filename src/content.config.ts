@@ -15,7 +15,7 @@ const pages = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string(),
-    hero: heroSchema,
+    hero: heroSchema.optional(),
     home: z.object({
       primaryActionLabel: z.string(),
       phoneActionLabel: z.string(),
