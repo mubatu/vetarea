@@ -1,6 +1,6 @@
-# Vet Area
+# VetArea
 
-Vet Area Emek Veteriner Kliniği için hazırlanan Türkçe, mobil öncelikli tanıtım ve iletişim sitesi.
+VetArea Emek Veteriner Kliniği için hazırlanan Türkçe, mobil öncelikli tanıtım ve iletişim sitesi.
 
 ## Yerel geliştirme
 

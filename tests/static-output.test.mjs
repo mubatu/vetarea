@@ -13,12 +13,12 @@ test("builds the Turkish static pages", async () => {
   assert.match(html, /<html lang="tr">/i);
   assert.match(html, /<title>[^<]*Vet ?Area[^<]*<\/title>/i);
   assert.match(html, /<meta property="og:title" content="[^"]*Vet ?Area[^"]*"/i);
-  assert.match(html, /href="\/"[^>]*aria-label="Vet Area ana sayfa"/);
+  assert.match(html, /href="\/"[^>]*aria-label="VetArea ana sayfa"/);
   assert.match(html, /src="\/logo\.(svg|png|webp)"/);
   assert.match(html, /href="\/"[^>]*>Ana Sayfa<\/a>/);
   assert.match(html, /href="\/hizmetler\/"/);
   assert.doesNotMatch(html, /Her yaşam evresine/);
-  assert.match(services, /<title>Hizmetler \| Vet Area<\/title>/i);
+  assert.match(services, /<title>Hizmetler \| VetArea<\/title>/i);
   assert.match(services, /Genel muayene/);
   assert.match(about, /Aynı dikkat/);
   assert.match(team, /Cihan Culha/);

@@ -30,9 +30,9 @@ home:
       text: "Merkezi ve kolay ulaşım"
       href: "maps"
   explore:
-    eyebrow: "Vet Area"
+    eyebrow: "VetArea"
     heading: "İhtiyacınız olan sayfaya geçin."
     text: "Hizmetler, ekip, randevu ve sık sorulan sorular artık ayrı sayfalarda daha rahat okunur."
 ---
 
-Vet Area, dostunuzun ihtiyaçlarına göre şekillenen açık, sakin ve özenli bir veterinerlik yaklaşımı sunar.
+VetArea, dostunuzun ihtiyaçlarına göre şekillenen açık, sakin ve özenli bir veterinerlik yaklaşımı sunar.

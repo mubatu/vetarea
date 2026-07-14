@@ -1,6 +1,6 @@
 ---
-title: "Sık Sorulanlar | Vet Area"
-description: "Vet Area'ya gelmeden önce randevu, acil durum ve ilk muayene hakkında merak edilenler."
+title: "Sık Sorulanlar | VetArea"
+description: "VetArea'ya gelmeden önce randevu, acil durum ve ilk muayene hakkında merak edilenler."
 hero:
   eyebrow: "Sık sorulanlar"
   heading: |

@@ -1,6 +1,6 @@
 ---
-title: "Hizmetler | Vet Area"
-description: "Vet Area'nın muayene, koruyucu sağlık, laboratuvar, görüntüleme, cerrahi ve mikroçip hizmetleri."
+title: "Hizmetler | VetArea"
+description: "VetArea'nın muayene, koruyucu sağlık, laboratuvar, görüntüleme, cerrahi ve mikroçip hizmetleri."
 hero:
   eyebrow: "Hizmetlerimiz"
   heading: "Her yaşam evresine özenli destek."

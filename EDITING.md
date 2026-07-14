@@ -1,4 +1,4 @@
-# Vet Area içerik düzenleme rehberi
+# VetArea içerik düzenleme rehberi
 
 Sitedeki tekrar kullanılan klinik bilgileri `src/data/site.tr.ts` dosyasında tutulur. Telefon, WhatsApp, adres, çalışma saatleri, menü bağlantıları, logo yolu, üst duyuru, footer metinleri, sosyal paylaşım görsel bilgileri ve yapılandırılmış adres bilgileri bu dosyadan güncellenmelidir.
 

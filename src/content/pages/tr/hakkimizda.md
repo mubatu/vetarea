@@ -1,8 +1,8 @@
 ---
-title: "Hakkımızda | Vet Area"
-description: "Vet Area'nın sakin, açık ve dostunuzun ihtiyacına göre şekillenen veterinerlik yaklaşımı."
+title: "Hakkımızda | VetArea"
+description: "VetArea'nın sakin, açık ve dostunuzun ihtiyacına göre şekillenen veterinerlik yaklaşımı."
 hero:
-  eyebrow: "Vet Area hakkında"
+  eyebrow: "VetArea hakkında"
   heading: |
     Aynı dikkat,
     her ziyarette.

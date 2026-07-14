@@ -1,11 +1,11 @@
 // Locale-specific labels and clinic details shared by every page.
 export const site = {
-  name: "Vet Area",
+  name: "VetArea",
   legalName: "VetArea Emek Veteriner Kliniği",
   brand: {
     displayName: "VetArea",
     subtitle: "Emek Veteriner Kliniği",
-    homeAriaLabel: "Vet Area ana sayfa",
+    homeAriaLabel: "VetArea ana sayfa",
     logoSrc: "/logo.png",
   },
   description:
@@ -40,7 +40,7 @@ export const site = {
   schemaHours: "Mo-Su 00:00-23:59",
   socialImage: {
     src: "/og.png",
-    alt: "Vet Area Emek Veteriner Kliniği",
+    alt: "VetArea Emek Veteriner Kliniği",
     width: 1200,
     height: 630,
   },
@@ -63,7 +63,7 @@ export const site = {
     footerDescription: "Dostlarınız için modern, güvenilir ve ulaşılabilir veteriner hizmeti.",
     footerExploreHeading: "Keşfedin",
     footerContactHeading: "Ulaşın",
-    footerCopyrightName: "Vet Area Emek Veteriner Kliniği",
+    footerCopyrightName: "VetArea Emek Veteriner Kliniği",
     footerTagline: "Emek'te dostlarınız için, her gün.",
     whatsappLabel: "WhatsApp",
     directionsLabel: "Yol tarifi",

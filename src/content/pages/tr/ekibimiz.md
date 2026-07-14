@@ -1,6 +1,6 @@
 ---
-title: "Ekibimiz | Vet Area"
-description: "Vet Area veteriner hekimleri ve klinik ekibi."
+title: "Ekibimiz | VetArea"
+description: "VetArea veteriner hekimleri ve klinik ekibi."
 hero:
   eyebrow: "Ekibimiz"
   heading: "Dostunuz emin ellerde."

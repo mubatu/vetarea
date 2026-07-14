@@ -1,6 +1,6 @@
 ---
-title: "İletişim | Vet Area"
-description: "Vet Area telefon, WhatsApp, adres ve yol tarifi bilgileri."
+title: "İletişim | VetArea"
+description: "VetArea telefon, WhatsApp, adres ve yol tarifi bilgileri."
 hero:
   eyebrow: "İletişim"
   heading: |
@@ -15,7 +15,7 @@ contact:
     phone: "Telefon"
     hours: "Çalışma saatleri"
     address: "Adres"
-  mapTitle: "Vet Area konumu"
-  mapSmall: "Vet Area"
+  mapTitle: "VetArea konumu"
+  mapSmall: "VetArea"
   mapStrong: "Yol tarifi alın"
 ---

@@ -1,6 +1,6 @@
 ## Codex Plan Recommendation
 
-I would build Vet Area with:
+I would build VetArea with:
 
 - **Astro + TypeScript**
 - **Astro Content Collections** for Markdown-based content
@@ -49,7 +49,7 @@ src/
 `site.tr.yaml` should contain information used in multiple places:
 
 ```yaml
-clinicName: Vet Area
+clinicName: VetArea
 phone: "+90 555 000 00 00"
 whatsapp: "905550000000"
 appointmentUrl: "https://..."
@@ -69,14 +69,14 @@ A homepage Markdown file could look like:
 
 ```md
 ---
-title: "Vet Area Veteriner Kliniği"
+title: "VetArea Veteriner Kliniği"
 description: "Dostlarınızın sağlığı için modern ve güvenilir veteriner hizmetleri."
 hero:
   heading: "Onların sağlığı, bizim önceliğimiz."
   text: "Deneyimli ekibimizle muayene, koruyucu bakım ve tedavi hizmetleri sunuyoruz."
   desktopImage: "../../../assets/images/hero/clinic-desktop.jpg"
   mobileImage: "../../../assets/images/hero/clinic-mobile.jpg"
-  imageAlt: "Vet Area kliniğinde bir veteriner ve köpek"
+  imageAlt: "VetArea kliniğinde bir veteriner ve köpek"
   primaryAction:
     label: "Randevu Al"
     url: "https://..."
@@ -112,7 +112,7 @@ However, I would not reproduce it directly.
 - Surgery imagery can communicate expertise, but as the primary image it may feel clinical or intimidating to some pet owners.
 - A carousel is unnecessary. One carefully selected hero image usually communicates more clearly and performs better.
 
-## Recommended Vet Area direction
+## Recommended VetArea direction
 
 Use a warmer, simpler visual language:
 
@@ -153,7 +153,7 @@ I suggest:
 2. Hero with appointment CTA
 3. Trust strip: hours, phone, location, emergency information
 4. Featured services
-5. Short “Vet Area Hakkında” section
+5. Short “VetArea Hakkında” section
 6. Team preview
 7. Clinic photographs
 8. Opening hours and map
