@@ -1,0 +1,11 @@
+---
+interface Props {
+  text: string;
+}
+
+const lines = Astro.props.text.split("\n");
+---
+
+{lines.map((line, index) => (
+  <>{index > 0 && <br />}{line}</>
+))}

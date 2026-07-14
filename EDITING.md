@@ -1,10 +1,19 @@
 # Vet Area içerik düzenleme rehberi
 
-Sitedeki tekrar kullanılan klinik bilgileri `src/data/site.tr.ts` dosyasında tutulur. Telefon, WhatsApp, adres, çalışma saatleri ve menü bağlantıları bu dosyadan güncellenmelidir.
+Sitedeki tekrar kullanılan klinik bilgileri `src/data/site.tr.ts` dosyasında tutulur. Telefon, WhatsApp, adres, çalışma saatleri, menü bağlantıları, logo yolu, üst duyuru, footer metinleri, sosyal paylaşım görsel bilgileri ve yapılandırılmış adres bilgileri bu dosyadan güncellenmelidir.
 
-Ana sayfanın başlık ve açıklamaları `src/content/pages/tr/ana-sayfa.md` dosyasındadır. Hizmet kartları `src/content/services/tr/`, ekip üyeleri `src/content/team/tr/`, sık sorulan sorular ise `src/data/site.tr.ts` altında tutulur.
+Sayfa başlıkları, sekme başlıkları, açıklamalar, hero metinleri ve sayfa içi çağrı metinleri `src/content/pages/tr/` altındaki Markdown dosyalarındadır:
 
-Sayfa düzenleri `src/pages/` altındadır:
+- Ana sayfa: `src/content/pages/tr/ana-sayfa.md`
+- Hizmetler sayfası: `src/content/pages/tr/hizmetler.md`
+- Hakkımızda sayfası: `src/content/pages/tr/hakkimizda.md`
+- Ekibimiz sayfası: `src/content/pages/tr/ekibimiz.md`
+- Sık Sorulanlar sayfası: `src/content/pages/tr/sss.md`
+- İletişim sayfası: `src/content/pages/tr/iletisim.md`
+
+Hizmet kartları `src/content/services/tr/`, ekip üyeleri `src/content/team/tr/`, sık sorulan sorular ise `src/data/site.tr.ts` altında tutulur.
+
+Sayfa şablonları `src/pages/` altındadır. Normal içerik düzenlemelerinde bu dosyalara dokunulmamalıdır:
 
 - Ana sayfa: `src/pages/index.astro`
 - Hizmetler: `src/pages/hizmetler/index.astro`
@@ -20,6 +29,7 @@ Sayfa düzenleri `src/pages/` altındadır:
 3. Çalışma saatlerindeki değişiklikleri aynı gün güncelleyin.
 4. Yeni bir hizmet eklerken tıbbi kapsamı ve kullanılan ifadeleri klinik ekibine onaylatın.
 5. Ekip isimleri veya unvanları değiştiğinde `src/content/team/tr/` altındaki ilgili dosyayı güncelleyin.
-6. Logo ve klinik fotoğrafları hazır olduğunda stok fotoğrafların yerine optimize edilmiş WebP veya AVIF dosyaları ekleyin.
+6. Logo değiştiğinde dosyayı `public/` altına koyun ve `src/data/site.tr.ts` içindeki `brand.logoSrc` değerini güncelleyin.
+7. Klinik fotoğrafları hazır olduğunda sayfa Markdown dosyalarındaki stok fotoğraf URL'lerini optimize edilmiş WebP veya AVIF dosyalarıyla değiştirin.
 
 İngilizce sayfalar eklenene kadar Türkçe içerik varsayılan ve tek dil olarak kalır.

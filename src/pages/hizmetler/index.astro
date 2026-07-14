@@ -1,18 +1,22 @@
 ---
-import { getCollection } from "astro:content";
+import { getCollection, getEntry } from "astro:content";
 import { site } from "../../data/site.tr";
 import SiteLayout from "../../layouts/SiteLayout.astro";
+
+const page = await getEntry("pages", "tr/hizmetler");
+if (!page) throw new Error("Türkçe hizmetler sayfası içeriği bulunamadı.");
+if (!page.data.serviceList) throw new Error("Türkçe hizmetler kart ayarları bulunamadı.");
 
 const services = (await getCollection("services", ({ id }) => id.startsWith("tr/")))
   .sort((a, b) => a.data.order - b.data.order);
 ---
 
-<SiteLayout title="Hizmetler | Vet Area" description="Vet Area'nın muayene, koruyucu sağlık, laboratuvar, görüntüleme, cerrahi ve mikroçip hizmetleri." activePath="/hizmetler/">
+<SiteLayout title={page.data.title} description={page.data.description} activePath="/hizmetler/">
   <section class="page-hero">
     <div class="shell page-hero-inner">
-      <p class="eyebrow"><span aria-hidden="true">●</span> Hizmetlerimiz</p>
-      <h1>Her yaşam evresine özenli destek.</h1>
-      <p>İlk kontrolden ileri tanı süreçlerine kadar ihtiyaca odaklanır, her adımı anlaşılır biçimde paylaşırız.</p>
+      <p class="eyebrow"><span aria-hidden="true">●</span> {page.data.hero.eyebrow}</p>
+      <h1>{page.data.hero.heading}</h1>
+      <p>{page.data.hero.text}</p>
     </div>
   </section>
 
@@ -24,8 +28,8 @@ const services = (await getCollection("services", ({ id }) => id.startsWith("tr/
             <span>{String(service.data.order).padStart(2, "0")}</span>
             <h3>{service.data.title}</h3>
             <p>{service.data.description}</p>
-            <a href={site.whatsapp.href} aria-label={`${service.data.title} için bilgi alın`}>
-              Bilgi alın <b aria-hidden="true">↗</b>
+            <a href={site.whatsapp.href} aria-label={`${service.data.title} ${page.data.serviceList.ctaAriaSuffix}`}>
+              {page.data.serviceList.ctaLabel} <b aria-hidden="true">↗</b>
             </a>
           </article>
         ))}

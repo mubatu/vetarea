@@ -1,16 +1,22 @@
 ---
+import { getEntry } from "astro:content";
+import LineBreakText from "../../components/LineBreakText.astro";
 import { faqs, site } from "../../data/site.tr";
 import SiteLayout from "../../layouts/SiteLayout.astro";
+
+const page = await getEntry("pages", "tr/sss");
+if (!page) throw new Error("Türkçe sık sorulanlar sayfası içeriği bulunamadı.");
+if (!page.data.faqPage) throw new Error("Türkçe sık sorulanlar detayları bulunamadı.");
 ---
 
-<SiteLayout title="Sık Sorulanlar | Vet Area" description="Vet Area'ya gelmeden önce randevu, acil durum ve ilk muayene hakkında merak edilenler." activePath="/sss/">
+<SiteLayout title={page.data.title} description={page.data.description} activePath="/sss/">
   <section class="section faq-section">
     <div class="shell faq-grid">
       <div class="faq-heading">
-        <p class="eyebrow dark"><span aria-hidden="true">●</span> Sık sorulanlar</p>
-        <h1>Gelmeden önce<br />merak ettikleriniz.</h1>
-        <p>Yanıtını bulamadığınız bir konu varsa bize dilediğiniz zaman ulaşabilirsiniz.</p>
-        <a class="text-button" href={site.whatsapp.href}>Bize sorun <span aria-hidden="true">↗</span></a>
+        <p class="eyebrow dark"><span aria-hidden="true">●</span> {page.data.hero.eyebrow}</p>
+        <h1><LineBreakText text={page.data.hero.heading} /></h1>
+        <p>{page.data.hero.text}</p>
+        <a class="text-button" href={site.whatsapp.href}>{page.data.faqPage.ctaLabel} <span aria-hidden="true">↗</span></a>
       </div>
       <div class="faq-list">
         {faqs.map((faq, index) => (

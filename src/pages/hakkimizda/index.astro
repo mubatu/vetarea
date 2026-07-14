@@ -1,28 +1,31 @@
 ---
+import { getEntry } from "astro:content";
+import LineBreakText from "../../components/LineBreakText.astro";
 import { site } from "../../data/site.tr";
 import SiteLayout from "../../layouts/SiteLayout.astro";
 
-const catImage =
-  "https://images.unsplash.com/photo-1733783506192-653df6185a7d?auto=format&fit=crop&fm=jpg&q=84&w=1400";
+const page = await getEntry("pages", "tr/hakkimizda");
+if (!page) throw new Error("Türkçe hakkımızda sayfası içeriği bulunamadı.");
+if (!page.data.about) throw new Error("Türkçe hakkımızda detayları bulunamadı.");
 ---
 
-<SiteLayout title="Hakkımızda | Vet Area" description="Vet Area'nın sakin, açık ve dostunuzun ihtiyacına göre şekillenen veterinerlik yaklaşımı." activePath="/hakkimizda/">
+<SiteLayout title={page.data.title} description={page.data.description} activePath="/hakkimizda/">
   <section class="about-section">
     <div class="shell about-grid">
       <div class="about-visual">
-        <img src={catImage} alt="Veteriner hekim tarafından muayene edilen beyaz bir kedi" loading="lazy" />
-        <p class="image-caption">Sakin yaklaşım, dikkatli muayene.</p>
+        <img src={page.data.about.image} alt={page.data.about.imageAlt} loading="lazy" />
+        <p class="image-caption">{page.data.about.imageCaption}</p>
       </div>
       <div class="about-copy">
-        <p class="eyebrow light"><span aria-hidden="true">●</span> Vet Area hakkında</p>
-        <h1>Aynı dikkat,<br />her ziyarette.</h1>
-        <p class="about-lead">Kliniğe gelen her dostun kendine özgü olduğunu biliyoruz. Bu yüzden önce dinler, sonra muayene eder ve seçenekleri sizinle birlikte değerlendiririz.</p>
+        <p class="eyebrow light"><span aria-hidden="true">●</span> {page.data.hero.eyebrow}</p>
+        <h1><LineBreakText text={page.data.hero.heading} /></h1>
+        <p class="about-lead">{page.data.about.lead}</p>
         <div class="principles">
-          <div><span>01</span><p><strong>Açık iletişim</strong>Tedavi sürecini anlaşılır şekilde paylaşırız.</p></div>
-          <div><span>02</span><p><strong>Bireysel yaklaşım</strong>Her planı dostunuzun ihtiyacına göre oluştururuz.</p></div>
-          <div><span>03</span><p><strong>Süreklilik</strong>Kontrolden takibe aynı özenle yanınızda oluruz.</p></div>
+          {page.data.about.principles.map((item, index) => (
+            <div><span>{String(index + 1).padStart(2, "0")}</span><p><strong>{item.title}</strong>{item.text}</p></div>
+          ))}
         </div>
-        <a class="button button-light" href={site.whatsapp.href}>Bizimle tanışın <span aria-hidden="true">↗</span></a>
+        <a class="button button-light" href={site.whatsapp.href}>{page.data.about.ctaLabel} <span aria-hidden="true">↗</span></a>
       </div>
     </div>
   </section>

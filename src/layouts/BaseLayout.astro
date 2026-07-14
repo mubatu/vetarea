@@ -9,30 +9,30 @@ interface Props {
 
 const { title, description } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site ?? site.url);
-const socialImage = new URL("/og.png", Astro.site ?? site.url);
+const socialImage = new URL(site.socialImage.src, Astro.site ?? site.url);
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "VeterinaryCare",
   name: site.legalName,
   url: site.url,
-  telephone: "+90 312 223 80 83",
+  telephone: site.phone.label,
   address: {
     "@type": "PostalAddress",
-    streetAddress: "Emek Mah. Bişkek Cad. No:26/B",
-    addressLocality: "Çankaya",
-    addressRegion: "Ankara",
-    addressCountry: "TR",
+    streetAddress: site.address.streetAddress,
+    addressLocality: site.address.locality,
+    addressRegion: site.address.region,
+    addressCountry: site.address.country,
   },
-  openingHours: "Mo-Su 00:00-23:59",
+  openingHours: site.schemaHours,
 };
 ---
 
 <!doctype html>
-<html lang="tr">
+<html lang={site.locale.htmlLang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <meta name="theme-color" content="#08396a" />
+    <meta name="theme-color" content={site.themeColor} />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
@@ -40,15 +40,15 @@ const structuredData = {
     <title>{title}</title>
 
     <meta property="og:type" content="website" />
-    <meta property="og:locale" content="tr_TR" />
+    <meta property="og:locale" content={site.locale.ogLocale} />
     <meta property="og:site_name" content={site.name} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={socialImage} />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Vet Area Emek Veteriner Kliniği" />
+    <meta property="og:image:width" content={site.socialImage.width} />
+    <meta property="og:image:height" content={site.socialImage.height} />
+    <meta property="og:image:alt" content={site.socialImage.alt} />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />

@@ -1,29 +1,35 @@
 ---
+import { getEntry } from "astro:content";
+import LineBreakText from "../../components/LineBreakText.astro";
 import { site } from "../../data/site.tr";
 import SiteLayout from "../../layouts/SiteLayout.astro";
+
+const page = await getEntry("pages", "tr/iletisim");
+if (!page) throw new Error("Türkçe iletişim sayfası içeriği bulunamadı.");
+if (!page.data.contact) throw new Error("Türkçe iletişim detayları bulunamadı.");
 ---
 
-<SiteLayout title="İletişim | Vet Area" description="Vet Area telefon, WhatsApp, adres ve yol tarifi bilgileri." activePath="/iletisim/">
+<SiteLayout title={page.data.title} description={page.data.description} activePath="/iletisim/">
   <section class="section contact-section">
     <div class="shell contact-grid">
       <div class="contact-copy">
-        <p class="eyebrow light"><span aria-hidden="true">●</span> İletişim</p>
-        <h1>Bir telefon<br />kadar yakınız.</h1>
-        <p>Randevu, acil durum ya da aklınıza takılanlar için bize ulaşın. Gelmeden önce aramanız, en doğru hazırlığı yapmamıza yardımcı olur.</p>
+        <p class="eyebrow light"><span aria-hidden="true">●</span> {page.data.hero.eyebrow}</p>
+        <h1><LineBreakText text={page.data.hero.heading} /></h1>
+        <p>{page.data.contact.intro}</p>
         <div class="contact-actions">
-          <a class="button button-white" href={site.phone.href}>Hemen ara <span aria-hidden="true">↗</span></a>
-          <a class="button button-outline-light" href={site.whatsapp.href}>WhatsApp</a>
+          <a class="button button-white" href={site.phone.href}>{page.data.contact.phoneCtaLabel} <span aria-hidden="true">↗</span></a>
+          <a class="button button-outline-light" href={site.whatsapp.href}>{page.data.contact.whatsappCtaLabel}</a>
         </div>
         <dl class="contact-list">
-          <div><dt>Telefon</dt><dd><a href={site.phone.href}>{site.phone.label}</a></dd></div>
-          <div><dt>Çalışma saatleri</dt><dd>{site.hours}</dd></div>
-          <div><dt>Adres</dt><dd>{site.address.full}</dd></div>
+          <div><dt>{page.data.contact.labels.phone}</dt><dd><a href={site.phone.href}>{site.phone.label}</a></dd></div>
+          <div><dt>{page.data.contact.labels.hours}</dt><dd>{site.hours}</dd></div>
+          <div><dt>{page.data.contact.labels.address}</dt><dd>{site.address.full}</dd></div>
         </dl>
       </div>
       <div class="map-card">
-        <iframe title="Vet Area konumu" src="https://www.google.com/maps?q=VetArea%20Emek%20Veteriner%20Klini%C4%9Fi&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe title={page.data.contact.mapTitle} src={site.address.embed} loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         <a href={site.address.maps}>
-          <span><small>Vet Area</small><strong>Yol tarifi alın</strong></span>
+          <span><small>{page.data.contact.mapSmall}</small><strong>{page.data.contact.mapStrong}</strong></span>
           <b aria-hidden="true">↗</b>
         </a>
       </div>

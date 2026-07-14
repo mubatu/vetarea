@@ -1,13 +1,15 @@
 ---
+import { site } from "../data/site.tr";
+
 const { href = "/" } = Astro.props;
 ---
 
-<a class="brand" href={href} aria-label="Vet Area ana sayfa">
+<a class="brand" href={href} aria-label={site.brand.homeAriaLabel}>
   <span class="brand-mark" aria-hidden="true">
-    <img src="/logo.png" alt="" width="42" height="42" />
+    <img src={site.brand.logoSrc} alt="" width="42" height="42" />
   </span>
   <span class="brand-copy">
-    <strong>VetArea</strong>
-    <small>Emek Veteriner Kliniği</small>
+    <strong>{site.brand.displayName}</strong>
+    <small>{site.brand.subtitle}</small>
   </span>
 </a>

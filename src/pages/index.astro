@@ -5,12 +5,16 @@ import SiteLayout from "../layouts/SiteLayout.astro";
 
 const home = await getEntry("pages", "tr/ana-sayfa");
 if (!home) throw new Error("Türkçe ana sayfa içeriği bulunamadı.");
+if (!home.data.home) throw new Error("Türkçe ana sayfa detayları bulunamadı.");
 
 const team = (await getCollection("team", ({ id }) => id.startsWith("tr/")))
   .sort((a, b) => a.data.order - b.data.order);
 
-const heroImage =
-  "https://images.unsplash.com/photo-1770836037289-e00e5f351d11?auto=format&fit=crop&fm=jpg&q=84&w=1800";
+const getSharedHref = (href: string) => {
+  if (href === "phone") return site.phone.href;
+  if (href === "maps") return site.address.maps;
+  return href;
+};
 ---
 
 <SiteLayout title={home.data.title} description={home.data.description} activePath="/">
@@ -22,51 +26,43 @@ const heroImage =
         <p class="hero-lead">{home.data.hero.text}</p>
         <div class="hero-actions">
           <a class="button" href={site.whatsapp.href}>
-            Randevu oluştur <span aria-hidden="true">↗</span>
+            {home.data.home.primaryActionLabel} <span aria-hidden="true">↗</span>
           </a>
           <a class="text-link" href={site.phone.href}>
             <span class="link-icon" aria-hidden="true">☎</span>
-            <span>Bizi arayın<strong>{site.phone.label}</strong></span>
+            <span>{home.data.home.phoneActionLabel}<strong>{site.phone.label}</strong></span>
           </a>
         </div>
         <div class="hero-note">
           <span class="avatar-stack" aria-hidden="true">
             {team.map((member) => <b>{member.data.initials}</b>)}<b>+</b>
           </span>
-          <p><strong>Güvendiğiniz ekip,</strong><br /> ihtiyaç duyduğunuz anda burada.</p>
+          <p><strong>{home.data.home.noteStrong}</strong><br /> {home.data.home.noteText}</p>
         </div>
       </div>
 
       <div class="hero-visual">
         <div class="hero-image-wrap">
-          <img src={heroImage} alt={home.data.hero.imageAlt} fetchpriority="high" />
+          <img src={home.data.hero.image} alt={home.data.hero.imageAlt} fetchpriority="high" />
         </div>
         <div class="open-card">
           <span class="open-icon" aria-hidden="true">+</span>
-          <span><small>Kesintisiz hizmet</small><strong>7 / 24 Açığız</strong></span>
+          <span><small>{home.data.home.statusSmall}</small><strong>{home.data.home.statusStrong}</strong></span>
         </div>
         <div class="paw-dots" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
       </div>
     </div>
   </section>
 
-  <section class="trust-bar" aria-label="Klinik bilgileri">
+  <section class="trust-bar" aria-label={home.data.home.trustAriaLabel}>
     <div class="shell trust-grid">
-      <a href={site.phone.href}>
-        <span class="trust-number">7/24</span>
-        <span><strong>Kesintisiz ulaşın</strong><small>Acil durumlarda önce arayın</small></span>
-        <b aria-hidden="true">↗</b>
-      </a>
-      <a href="/ekibimiz/">
-        <span class="trust-number">02</span>
-        <span><strong>Tanıdığınız hekimler</strong><small>Şeffaf ve sakin iletişim</small></span>
-        <b aria-hidden="true">↗</b>
-      </a>
-      <a href={site.address.maps}>
-        <span class="trust-number">06</span>
-        <span><strong>Emek, Çankaya</strong><small>Merkezi ve kolay ulaşım</small></span>
-        <b aria-hidden="true">↗</b>
-      </a>
+      {home.data.home.trust.map((item) => (
+        <a href={getSharedHref(item.href)}>
+          <span class="trust-number">{item.number}</span>
+          <span><strong>{item.title}</strong><small>{item.text}</small></span>
+          <b aria-hidden="true">↗</b>
+        </a>
+      ))}
     </div>
   </section>
 
@@ -74,10 +70,10 @@ const heroImage =
     <div class="shell">
       <div class="section-heading split-heading">
         <div>
-          <p class="eyebrow dark"><span aria-hidden="true">●</span> Vet Area</p>
-          <h2 id="explore-title">İhtiyacınız olan sayfaya geçin.</h2>
+          <p class="eyebrow dark"><span aria-hidden="true">●</span> {home.data.home.explore.eyebrow}</p>
+          <h2 id="explore-title">{home.data.home.explore.heading}</h2>
         </div>
-        <p>Hizmetler, ekip, randevu ve sık sorulan sorular artık ayrı sayfalarda daha rahat okunur.</p>
+        <p>{home.data.home.explore.text}</p>
       </div>
       <div class="page-link-grid">
         {site.nav.map((item, index) => (

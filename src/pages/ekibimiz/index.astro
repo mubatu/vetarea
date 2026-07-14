@@ -1,17 +1,20 @@
 ---
-import { getCollection } from "astro:content";
+import { getCollection, getEntry } from "astro:content";
 import SiteLayout from "../../layouts/SiteLayout.astro";
+
+const page = await getEntry("pages", "tr/ekibimiz");
+if (!page) throw new Error("Türkçe ekibimiz sayfası içeriği bulunamadı.");
 
 const team = (await getCollection("team", ({ id }) => id.startsWith("tr/")))
   .sort((a, b) => a.data.order - b.data.order);
 ---
 
-<SiteLayout title="Ekibimiz | Vet Area" description="Vet Area veteriner hekimleri ve klinik ekibi." activePath="/ekibimiz/">
+<SiteLayout title={page.data.title} description={page.data.description} activePath="/ekibimiz/">
   <section class="page-hero">
     <div class="shell page-hero-inner">
-      <p class="eyebrow"><span aria-hidden="true">●</span> Ekibimiz</p>
-      <h1>Dostunuz emin ellerde.</h1>
-      <p>Dinleyen, açıklayan ve süreci birlikte yöneten bir ekip.</p>
+      <p class="eyebrow"><span aria-hidden="true">●</span> {page.data.hero.eyebrow}</p>
+      <h1>{page.data.hero.heading}</h1>
+      <p>{page.data.hero.text}</p>
     </div>
   </section>
 

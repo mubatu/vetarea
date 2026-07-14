@@ -14,33 +14,33 @@ const isActive = (href: string) => activePath === href || Astro.url.pathname ===
 ---
 
 <BaseLayout title={title} description={description}>
-  <a class="skip-link" href="#main">İçeriğe geç</a>
+  <a class="skip-link" href="#main">{site.ui.skipLink}</a>
 
   <div class="announcement" role="note">
     <div class="shell announcement-inner">
-      <span><i aria-hidden="true"></i> Emek&apos;te 7 gün, 24 saat yanınızdayız</span>
-      <a href={site.phone.href}>Acil durumlar için arayın</a>
+      <span><i aria-hidden="true"></i> {site.ui.announcementText}</span>
+      <a href={site.phone.href}>{site.ui.announcementCta}</a>
     </div>
   </div>
 
   <header class="site-header">
     <div class="shell header-inner">
       <Brand />
-      <nav class="desktop-nav" aria-label="Ana menü">
+      <nav class="desktop-nav" aria-label={site.ui.mainNavAriaLabel}>
         {site.nav.map((item) => (
           <a href={item.href} aria-current={isActive(item.href) ? "page" : undefined}>{item.label}</a>
         ))}
       </nav>
       <a class="button button-small header-cta" href={site.whatsapp.href}>
-        Randevu al <span aria-hidden="true">↗</span>
+        {site.ui.appointmentCta} <span aria-hidden="true">↗</span>
       </a>
       <details class="mobile-menu">
-        <summary aria-label="Menüyü aç">Menü</summary>
-        <nav aria-label="Mobil menü">
+        <summary aria-label={site.ui.mobileMenuLabel}>{site.ui.mobileMenuLabel}</summary>
+        <nav aria-label={site.ui.mobileNavAriaLabel}>
           {site.nav.map((item) => (
             <a href={item.href} aria-current={isActive(item.href) ? "page" : undefined}>{item.label}</a>
           ))}
-          <a href={site.whatsapp.href}>Randevu al</a>
+          <a href={site.whatsapp.href}>{site.ui.appointmentCta}</a>
         </nav>
       </details>
     </div>
@@ -54,22 +54,22 @@ const isActive = (href: string) => activePath === href || Astro.url.pathname ===
     <div class="shell footer-main">
       <div>
         <Brand />
-        <p>Dostlarınız için modern, güvenilir ve ulaşılabilir veteriner hizmeti.</p>
+        <p>{site.ui.footerDescription}</p>
       </div>
       <div class="footer-links">
-        <div><h3>Keşfedin</h3>{site.nav.slice(0, 4).map((item) => <a href={item.href}>{item.label}</a>)}</div>
-        <div><h3>Ulaşın</h3><a href={site.phone.href}>{site.phone.label}</a><a href={site.whatsapp.href}>WhatsApp</a><a href={site.address.maps}>Yol tarifi</a></div>
+        <div><h3>{site.ui.footerExploreHeading}</h3>{site.nav.slice(0, 4).map((item) => <a href={item.href}>{item.label}</a>)}</div>
+        <div><h3>{site.ui.footerContactHeading}</h3><a href={site.phone.href}>{site.phone.label}</a><a href={site.whatsapp.href}>{site.ui.whatsappLabel}</a><a href={site.address.maps}>{site.ui.directionsLabel}</a></div>
       </div>
     </div>
     <div class="shell footer-bottom">
-      <p>© {new Date().getFullYear()} Vet Area Emek Veteriner Kliniği</p>
-      <p>Emek&apos;te dostlarınız için, her gün.</p>
+      <p>© {new Date().getFullYear()} {site.ui.footerCopyrightName}</p>
+      <p>{site.ui.footerTagline}</p>
     </div>
   </footer>
 
-  <nav class="mobile-action-bar" aria-label="Hızlı iletişim">
-    <a href={site.phone.href}><span aria-hidden="true">☎</span>Ara</a>
-    <a href={site.whatsapp.href}><span aria-hidden="true">●</span>WhatsApp</a>
-    <a href={site.address.maps}><span aria-hidden="true">⌖</span>Yol tarifi</a>
+  <nav class="mobile-action-bar" aria-label={site.ui.mobileActionAriaLabel}>
+    <a href={site.phone.href}><span aria-hidden="true">☎</span>{site.ui.mobileActions.phone}</a>
+    <a href={site.whatsapp.href}><span aria-hidden="true">●</span>{site.ui.mobileActions.whatsapp}</a>
+    <a href={site.address.maps}><span aria-hidden="true">⌖</span>{site.ui.mobileActions.directions}</a>
   </nav>
 </BaseLayout>
