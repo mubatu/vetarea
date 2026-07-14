@@ -36,8 +36,8 @@ export const site = {
     embed:
       "https://www.google.com/maps?q=VetArea%20Emek%20Veteriner%20Klini%C4%9Fi&output=embed",
   },
-  hours: "7 gün, 24 saat",
-  schemaHours: "Mo-Su 00:00-23:59",
+  hours: "Her gün 09.00-21.00",
+  schemaHours: "Mo-Su 09:00-21:00",
   socialImage: {
     src: "/og.png",
     alt: "VetArea Emek Veteriner Kliniği",
@@ -57,7 +57,7 @@ export const site = {
     mainNavAriaLabel: "Ana menü",
     mobileNavAriaLabel: "Mobil menü",
     mobileMenuLabel: "Menüyü aç",
-    announcementText: "Emek'te 7 gün, 24 saat yanınızdayız",
+    announcementText: "Emek'te her gün 09.00-21.00 yanınızdayız",
     announcementCta: "Acil durumlar için arayın",
     appointmentCta: "Randevu al",
     footerDescription: "Dostlarınız için modern, güvenilir ve ulaşılabilir veteriner hizmeti.",
