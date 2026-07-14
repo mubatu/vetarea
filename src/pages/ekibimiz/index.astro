@@ -1,0 +1,31 @@
+---
+import { getCollection } from "astro:content";
+import SiteLayout from "../../layouts/SiteLayout.astro";
+
+const team = (await getCollection("team", ({ id }) => id.startsWith("tr/")))
+  .sort((a, b) => a.data.order - b.data.order);
+---
+
+<SiteLayout title="Ekibimiz | Vet Area" description="Vet Area veteriner hekimleri ve klinik ekibi." activePath="/ekibimiz/">
+  <section class="page-hero">
+    <div class="shell page-hero-inner">
+      <p class="eyebrow"><span aria-hidden="true">●</span> Ekibimiz</p>
+      <h1>Dostunuz emin ellerde.</h1>
+      <p>Dinleyen, açıklayan ve süreci birlikte yöneten bir ekip.</p>
+    </div>
+  </section>
+
+  <section class="section team-section">
+    <div class="shell">
+      <div class="team-grid">
+        {team.map((member, index) => (
+          <article class:list={["team-card", index % 2 === 0 ? "team-card-red" : "team-card-blue"]}>
+            <div class="team-initial">{member.data.initials}</div>
+            <div><p>{member.data.role}</p><h3>{member.data.name}</h3></div>
+            <span aria-hidden="true">{String(member.data.order).padStart(2, "0")}</span>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</SiteLayout>

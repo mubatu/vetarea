@@ -21,11 +21,11 @@ export const site = {
   },
   hours: "7 gün, 24 saat",
   nav: [
-    { label: "Hizmetler", href: "#hizmetler" },
-    { label: "Hakkımızda", href: "#hakkimizda" },
-    { label: "Ekibimiz", href: "#ekibimiz" },
-    { label: "Sık Sorulanlar", href: "#sss" },
-    { label: "İletişim", href: "#iletisim" },
+    { label: "Hizmetler", href: "/hizmetler/" },
+    { label: "Hakkımızda", href: "/hakkimizda/" },
+    { label: "Ekibimiz", href: "/ekibimiz/" },
+    { label: "Sık Sorulanlar", href: "/sss/" },
+    { label: "İletişim", href: "/iletisim/" },
   ],
 } as const;
 
