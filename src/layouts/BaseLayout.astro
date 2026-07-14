@@ -1,0 +1,63 @@
+---
+import { site } from "../data/site.tr";
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site ?? site.url);
+const socialImage = new URL("/og.png", Astro.site ?? site.url);
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "VeterinaryCare",
+  name: site.legalName,
+  url: site.url,
+  telephone: "+90 312 223 80 83",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Emek Mah. Bişkek Cad. No:26/B",
+    addressLocality: "Çankaya",
+    addressRegion: "Ankara",
+    addressCountry: "TR",
+  },
+  openingHours: "Mo-Su 00:00-23:59",
+};
+---
+
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="theme-color" content="#08396a" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
+    <title>{title}</title>
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="tr_TR" />
+    <meta property="og:site_name" content={site.name} />
+    <meta property="og:title" content="Vet Area | İyi bakılmak onların da hakkı" />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={socialImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Vet Area Emek Veteriner Kliniği" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Vet Area | Emek Veteriner Kliniği" />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImage} />
+
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

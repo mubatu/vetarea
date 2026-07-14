@@ -1,8 +1,8 @@
 # Vet Area içerik düzenleme rehberi
 
-Sitedeki tekrar kullanılan klinik bilgileri `data/site.tr.ts` dosyasında tutulur. Telefon, WhatsApp, adres, çalışma saatleri ve menü bağlantıları bu dosyadan güncellenmelidir.
+Sitedeki tekrar kullanılan klinik bilgileri `src/data/site.tr.ts` dosyasında tutulur. Telefon, WhatsApp, adres, çalışma saatleri ve menü bağlantıları bu dosyadan güncellenmelidir.
 
-Ana sayfadaki başlıklar, açıklamalar, ekip ve bölüm sıralaması `app/page.tsx` dosyasındadır. Hizmet kartları ile sık sorulan sorular yine `data/site.tr.ts` içinde ayrı listeler halinde bulunur.
+Ana sayfanın başlık ve açıklamaları `src/content/pages/tr/ana-sayfa.md` dosyasındadır. Hizmet kartları `src/content/services/tr/`, ekip üyeleri `src/content/team/tr/`, sık sorulan sorular ise `src/data/site.tr.ts` altında tutulur. Sayfa düzeni `src/pages/index.astro` dosyasındadır.
 
 ## Yayına almadan önce kontrol listesi
 
