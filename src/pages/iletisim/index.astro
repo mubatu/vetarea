@@ -1,6 +1,6 @@
 ---
 import { getEntry } from "astro:content";
-import { ArrowUpRight } from "@lucide/astro";
+import { SquareArrowOutUpRight } from "@lucide/astro";
 import LineBreakText from "../../components/LineBreakText.astro";
 import WhatsAppIcon from "../../components/WhatsAppIcon.astro";
 import { site } from "../../data/site.tr";
@@ -18,7 +18,7 @@ if (!page.data.contact) throw new Error("Türkçe iletişim detayları bulunamad
         <h1><LineBreakText text={page.data.hero.heading} /></h1>
         <p>{page.data.contact.intro}</p>
         <div class="contact-actions">
-          <a class="button button-white" href={site.phone.href}>{page.data.contact.phoneCtaLabel} <ArrowUpRight aria-hidden="true" size={16} /></a>
+          <a class="button button-white" href={site.phone.href}>{page.data.contact.phoneCtaLabel} <SquareArrowOutUpRight aria-hidden="true" size={16} /></a>
           <a class="button button-whatsapp" href={site.whatsapp.href} target="_blank" rel="noopener noreferrer">
             {page.data.contact.whatsappCtaLabel} <WhatsAppIcon />
           </a>
@@ -33,7 +33,7 @@ if (!page.data.contact) throw new Error("Türkçe iletişim detayları bulunamad
         <iframe title={page.data.contact.mapTitle} src={site.address.embed} loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         <a href={site.address.maps}>
           <span><small>{page.data.contact.mapSmall}</small><strong>{page.data.contact.mapStrong}</strong></span>
-          <ArrowUpRight aria-hidden="true" size={15} />
+          <SquareArrowOutUpRight aria-hidden="true" size={15} />
         </a>
       </div>
     </div>

@@ -1,6 +1,6 @@
 ---
 import { getCollection, getEntry } from "astro:content";
-import { ArrowUpRight, MapPin, Phone, Plus, Users } from "@lucide/astro";
+import { MapPin, Phone, Plus, SquareArrowOutUpRight, Users } from "@lucide/astro";
 import { site } from "../data/site.tr";
 import SiteLayout from "../layouts/SiteLayout.astro";
 
@@ -26,7 +26,7 @@ const getSharedHref = (href: string) => {
         <p class="hero-lead">{home.data.hero.text}</p>
         <div class="hero-actions">
           <a class="button" href={site.whatsapp.href} target="_blank" rel="noopener noreferrer">
-            {home.data.home.primaryActionLabel} <ArrowUpRight aria-hidden="true" size={16} />
+            {home.data.home.primaryActionLabel} <SquareArrowOutUpRight aria-hidden="true" size={16} />
           </a>
           <a class="text-link" href={site.phone.href}>
             <span class="link-icon" aria-hidden="true"><Phone size={16} /></span>
@@ -64,7 +64,7 @@ const getSharedHref = (href: string) => {
             {!item.icon && item.number}
           </span>
           <span><strong>{item.title}</strong><small>{item.text}</small></span>
-          <ArrowUpRight aria-hidden="true" size={15} />
+          <SquareArrowOutUpRight aria-hidden="true" size={15} />
         </a>
       ))}
     </div>

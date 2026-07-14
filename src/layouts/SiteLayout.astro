@@ -1,5 +1,5 @@
 ---
-import { ArrowUpRight, Circle, MapPin, MessageCircle, Phone } from "@lucide/astro";
+import { Circle, MapPin, MessageCircle, Phone, SquareArrowOutUpRight } from "@lucide/astro";
 import Brand from "../components/Brand.astro";
 import { site } from "../data/site.tr";
 import BaseLayout from "./BaseLayout.astro";
@@ -33,7 +33,7 @@ const isActive = (href: string) => activePath === href || Astro.url.pathname ===
         ))}
       </nav>
       <a class="button button-small header-cta" href={site.whatsapp.href} target="_blank" rel="noopener noreferrer">
-        {site.ui.appointmentCta} <ArrowUpRight aria-hidden="true" size={15} />
+        {site.ui.appointmentCta} <SquareArrowOutUpRight aria-hidden="true" size={15} />
       </a>
       <details class="mobile-menu">
         <summary aria-label={site.ui.mobileMenuLabel}>{site.ui.mobileMenuLabel}</summary>

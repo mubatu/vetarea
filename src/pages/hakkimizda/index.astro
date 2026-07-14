@@ -1,6 +1,6 @@
 ---
 import { getEntry } from "astro:content";
-import { ArrowUpRight } from "@lucide/astro";
+import { SquareArrowOutUpRight } from "@lucide/astro";
 import LineBreakText from "../../components/LineBreakText.astro";
 import { site } from "../../data/site.tr";
 import SiteLayout from "../../layouts/SiteLayout.astro";
@@ -25,7 +25,7 @@ if (!page.data.about) throw new Error("Türkçe hakkımızda detayları bulunama
             <div><span>{String(index + 1).padStart(2, "0")}</span><p><strong>{item.title}</strong>{item.text}</p></div>
           ))}
         </div>
-        <a class="button button-light" href={site.whatsapp.href}>{page.data.about.ctaLabel} <ArrowUpRight aria-hidden="true" size={16} /></a>
+        <a class="button button-light" href={site.whatsapp.href}>{page.data.about.ctaLabel} <SquareArrowOutUpRight aria-hidden="true" size={16} /></a>
       </div>
     </div>
   </section>
