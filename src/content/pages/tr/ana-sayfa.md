@@ -21,14 +21,14 @@ home:
       title: "Her gün açığız"
       text: "09.00-21.00 arası ulaşın"
       href: "phone"
-    - number: "02"
+    - icon: "users"
       title: "Tanıdığınız hekimler"
       text: "Şeffaf ve sakin iletişim"
       href: "/ekibimiz/"
-    - number: "06"
+    - icon: "map-pin"
       title: "Emek, Çankaya"
       text: "Merkezi ve kolay ulaşım"
-      href: "maps"
+      href: "/iletisim/"
 ---
 
 VetArea, dostunuzun ihtiyaçlarına göre şekillenen açık, sakin ve özenli bir veterinerlik yaklaşımı sunar.

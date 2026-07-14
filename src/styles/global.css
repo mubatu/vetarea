@@ -565,7 +565,8 @@ a {
 .trust-grid a > span:nth-child(2) { display: grid; line-height: 1.3; }
 .trust-grid strong { color: var(--navy-deep); font-size: 13px; }
 .trust-grid small { margin-top: 5px; color: #80909c; font-size: 10px; }
-.trust-grid svg { color: var(--red); }
+.trust-number svg { color: currentColor; }
+.trust-grid > a > svg { color: var(--red); }
 
 .section {
   padding: 116px 0;

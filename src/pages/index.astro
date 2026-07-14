@@ -1,6 +1,6 @@
 ---
 import { getCollection, getEntry } from "astro:content";
-import { ArrowUpRight, Circle, Phone, Plus } from "@lucide/astro";
+import { ArrowUpRight, Circle, MapPin, Phone, Plus, Users } from "@lucide/astro";
 import { site } from "../data/site.tr";
 import SiteLayout from "../layouts/SiteLayout.astro";
 
@@ -59,7 +59,11 @@ const getSharedHref = (href: string) => {
     <div class="shell trust-grid">
       {home.data.home.trust.map((item) => (
         <a href={getSharedHref(item.href)}>
-          <span class="trust-number">{item.number}</span>
+          <span class="trust-number">
+            {item.icon === "users" && <Users aria-hidden="true" size={18} />}
+            {item.icon === "map-pin" && <MapPin aria-hidden="true" size={18} />}
+            {!item.icon && item.number}
+          </span>
           <span><strong>{item.title}</strong><small>{item.text}</small></span>
           <ArrowUpRight aria-hidden="true" size={15} />
         </a>
