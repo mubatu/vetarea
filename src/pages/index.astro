@@ -1,5 +1,5 @@
 ---
-import { getCollection, getEntry } from "astro:content";
+import { getEntry } from "astro:content";
 import { MapPin, Phone, Plus, SquareArrowOutUpRight, Users } from "@lucide/astro";
 import { site } from "../data/site.tr";
 import SiteLayout from "../layouts/SiteLayout.astro";
@@ -7,9 +7,6 @@ import SiteLayout from "../layouts/SiteLayout.astro";
 const home = await getEntry("pages", "tr/ana-sayfa");
 if (!home) throw new Error("Türkçe ana sayfa içeriği bulunamadı.");
 if (!home.data.home) throw new Error("Türkçe ana sayfa detayları bulunamadı.");
-
-const team = (await getCollection("team", ({ id }) => id.startsWith("tr/")))
-  .sort((a, b) => a.data.order - b.data.order);
 
 const getSharedHref = (href: string) => {
   if (href === "phone") return site.phone.href;
@@ -32,12 +29,6 @@ const getSharedHref = (href: string) => {
             <span class="link-icon" aria-hidden="true"><Phone size={16} /></span>
             <span>{home.data.home.phoneActionLabel}<strong>{site.phone.label}</strong></span>
           </a>
-        </div>
-        <div class="hero-note">
-          <span class="avatar-stack" aria-hidden="true">
-            {team.map((member) => <b>{member.data.initials}</b>)}<b>+</b>
-          </span>
-          <p><strong>{home.data.home.noteStrong}</strong><br /> {home.data.home.noteText}</p>
         </div>
       </div>
 

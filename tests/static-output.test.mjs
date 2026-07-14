@@ -24,6 +24,7 @@ test("builds the Turkish static pages", async () => {
   assert.match(html, /href="\/iletisim\/"[^>]*>[\s\S]*lucide-map-pin/i);
   assert.doesNotMatch(html, />02<\/span>/);
   assert.doesNotMatch(html, />06<\/span>/);
+  assert.doesNotMatch(html, /CC|EÇ|Güvendiğiniz ekip|ihtiyaç duyduğunuz anda burada/);
   assert.doesNotMatch(html, /İhtiyacınız olan sayfaya geçin/);
   assert.doesNotMatch(services, /Her yaşam evresine özenli destek/);
   assert.doesNotMatch(services, /İlk kontrolden ileri tanı süreçlerine/);

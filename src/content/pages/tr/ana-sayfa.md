@@ -10,8 +10,6 @@ hero:
 home:
   primaryActionLabel: "Randevu al"
   phoneActionLabel: "Bizi arayın"
-  noteStrong: "Güvendiğiniz ekip,"
-  noteText: "ihtiyaç duyduğunuz anda burada."
   statusSmall: "Çalışma saatleri"
   statusStrong: "09.00-21.00"
   trustAriaLabel: "Klinik bilgileri"

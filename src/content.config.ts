@@ -24,8 +24,6 @@ const pages = defineCollection({
     home: z.object({
       primaryActionLabel: z.string(),
       phoneActionLabel: z.string(),
-      noteStrong: z.string(),
-      noteText: z.string(),
       statusSmall: z.string(),
       statusStrong: z.string(),
       trustAriaLabel: z.string(),
