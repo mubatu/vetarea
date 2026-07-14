@@ -1,4 +1,5 @@
 ---
+import { ArrowUpRight, Circle, MapPin, MessageCircle, Phone } from "@lucide/astro";
 import Brand from "../components/Brand.astro";
 import { site } from "../data/site.tr";
 import BaseLayout from "./BaseLayout.astro";
@@ -18,7 +19,7 @@ const isActive = (href: string) => activePath === href || Astro.url.pathname ===
 
   <div class="announcement" role="note">
     <div class="shell announcement-inner">
-      <span><i aria-hidden="true"></i> {site.ui.announcementText}</span>
+      <span><Circle aria-hidden="true" size={7} fill="currentColor" strokeWidth={0} /> {site.ui.announcementText}</span>
       <a href={site.phone.href}>{site.ui.announcementCta}</a>
     </div>
   </div>
@@ -32,7 +33,7 @@ const isActive = (href: string) => activePath === href || Astro.url.pathname ===
         ))}
       </nav>
       <a class="button button-small header-cta" href={site.whatsapp.href}>
-        {site.ui.appointmentCta} <span aria-hidden="true">↗</span>
+        {site.ui.appointmentCta} <ArrowUpRight aria-hidden="true" size={15} />
       </a>
       <details class="mobile-menu">
         <summary aria-label={site.ui.mobileMenuLabel}>{site.ui.mobileMenuLabel}</summary>
@@ -68,8 +69,8 @@ const isActive = (href: string) => activePath === href || Astro.url.pathname ===
   </footer>
 
   <nav class="mobile-action-bar" aria-label={site.ui.mobileActionAriaLabel}>
-    <a href={site.phone.href}><span aria-hidden="true">☎</span>{site.ui.mobileActions.phone}</a>
-    <a href={site.whatsapp.href}><span aria-hidden="true">●</span>{site.ui.mobileActions.whatsapp}</a>
-    <a href={site.address.maps}><span aria-hidden="true">⌖</span>{site.ui.mobileActions.directions}</a>
+    <a href={site.phone.href}><Phone aria-hidden="true" size={16} />{site.ui.mobileActions.phone}</a>
+    <a href={site.whatsapp.href}><MessageCircle aria-hidden="true" size={16} />{site.ui.mobileActions.whatsapp}</a>
+    <a href={site.address.maps}><MapPin aria-hidden="true" size={16} />{site.ui.mobileActions.directions}</a>
   </nav>
 </BaseLayout>

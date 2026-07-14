@@ -1,5 +1,6 @@
 ---
 import { getEntry } from "astro:content";
+import { ArrowUpRight, Circle } from "@lucide/astro";
 import LineBreakText from "../../components/LineBreakText.astro";
 import { site } from "../../data/site.tr";
 import SiteLayout from "../../layouts/SiteLayout.astro";
@@ -17,7 +18,7 @@ if (!page.data.about) throw new Error("Türkçe hakkımızda detayları bulunama
         <p class="image-caption">{page.data.about.imageCaption}</p>
       </div>
       <div class="about-copy">
-        <p class="eyebrow light"><span aria-hidden="true">●</span> {page.data.hero.eyebrow}</p>
+        <p class="eyebrow light"><Circle aria-hidden="true" size={9} fill="currentColor" strokeWidth={0} /> {page.data.hero.eyebrow}</p>
         <h1><LineBreakText text={page.data.hero.heading} /></h1>
         <p class="about-lead">{page.data.about.lead}</p>
         <div class="principles">
@@ -25,7 +26,7 @@ if (!page.data.about) throw new Error("Türkçe hakkımızda detayları bulunama
             <div><span>{String(index + 1).padStart(2, "0")}</span><p><strong>{item.title}</strong>{item.text}</p></div>
           ))}
         </div>
-        <a class="button button-light" href={site.whatsapp.href}>{page.data.about.ctaLabel} <span aria-hidden="true">↗</span></a>
+        <a class="button button-light" href={site.whatsapp.href}>{page.data.about.ctaLabel} <ArrowUpRight aria-hidden="true" size={16} /></a>
       </div>
     </div>
   </section>

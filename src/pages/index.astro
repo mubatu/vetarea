@@ -1,5 +1,6 @@
 ---
 import { getCollection, getEntry } from "astro:content";
+import { ArrowUpRight, Circle, Phone, Plus } from "@lucide/astro";
 import { site } from "../data/site.tr";
 import SiteLayout from "../layouts/SiteLayout.astro";
 
@@ -21,15 +22,15 @@ const getSharedHref = (href: string) => {
   <section class="hero" id="top">
     <div class="shell hero-grid">
       <div class="hero-copy">
-        <p class="eyebrow"><span aria-hidden="true">●</span> {home.data.hero.eyebrow}</p>
+        <p class="eyebrow"><Circle aria-hidden="true" size={9} fill="currentColor" strokeWidth={0} /> {home.data.hero.eyebrow}</p>
         <h1>{home.data.hero.heading}<br /> <em>{home.data.hero.highlight}</em></h1>
         <p class="hero-lead">{home.data.hero.text}</p>
         <div class="hero-actions">
           <a class="button" href={site.whatsapp.href}>
-            {home.data.home.primaryActionLabel} <span aria-hidden="true">↗</span>
+            {home.data.home.primaryActionLabel} <ArrowUpRight aria-hidden="true" size={16} />
           </a>
           <a class="text-link" href={site.phone.href}>
-            <span class="link-icon" aria-hidden="true">☎</span>
+            <span class="link-icon" aria-hidden="true"><Phone size={16} /></span>
             <span>{home.data.home.phoneActionLabel}<strong>{site.phone.label}</strong></span>
           </a>
         </div>
@@ -46,7 +47,7 @@ const getSharedHref = (href: string) => {
           <img src={home.data.hero.image} alt={home.data.hero.imageAlt} fetchpriority="high" />
         </div>
         <div class="open-card">
-          <span class="open-icon" aria-hidden="true">+</span>
+          <span class="open-icon" aria-hidden="true"><Plus size={25} /></span>
           <span><small>{home.data.home.statusSmall}</small><strong>{home.data.home.statusStrong}</strong></span>
         </div>
         <div class="paw-dots" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
@@ -60,7 +61,7 @@ const getSharedHref = (href: string) => {
         <a href={getSharedHref(item.href)}>
           <span class="trust-number">{item.number}</span>
           <span><strong>{item.title}</strong><small>{item.text}</small></span>
-          <b aria-hidden="true">↗</b>
+          <ArrowUpRight aria-hidden="true" size={15} />
         </a>
       ))}
     </div>

@@ -1,5 +1,6 @@
 ---
 import { getEntry } from "astro:content";
+import { ArrowUpRight, Circle } from "@lucide/astro";
 import LineBreakText from "../../components/LineBreakText.astro";
 import { site } from "../../data/site.tr";
 import SiteLayout from "../../layouts/SiteLayout.astro";
@@ -13,11 +14,11 @@ if (!page.data.contact) throw new Error("Türkçe iletişim detayları bulunamad
   <section class="section contact-section">
     <div class="shell contact-grid">
       <div class="contact-copy">
-        <p class="eyebrow light"><span aria-hidden="true">●</span> {page.data.hero.eyebrow}</p>
+        <p class="eyebrow light"><Circle aria-hidden="true" size={9} fill="currentColor" strokeWidth={0} /> {page.data.hero.eyebrow}</p>
         <h1><LineBreakText text={page.data.hero.heading} /></h1>
         <p>{page.data.contact.intro}</p>
         <div class="contact-actions">
-          <a class="button button-white" href={site.phone.href}>{page.data.contact.phoneCtaLabel} <span aria-hidden="true">↗</span></a>
+          <a class="button button-white" href={site.phone.href}>{page.data.contact.phoneCtaLabel} <ArrowUpRight aria-hidden="true" size={16} /></a>
           <a class="button button-outline-light" href={site.whatsapp.href}>{page.data.contact.whatsappCtaLabel}</a>
         </div>
         <dl class="contact-list">
@@ -30,7 +31,7 @@ if (!page.data.contact) throw new Error("Türkçe iletişim detayları bulunamad
         <iframe title={page.data.contact.mapTitle} src={site.address.embed} loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         <a href={site.address.maps}>
           <span><small>{page.data.contact.mapSmall}</small><strong>{page.data.contact.mapStrong}</strong></span>
-          <b aria-hidden="true">↗</b>
+          <ArrowUpRight aria-hidden="true" size={15} />
         </a>
       </div>
     </div>

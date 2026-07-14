@@ -1,5 +1,6 @@
 ---
 import { getCollection, getEntry } from "astro:content";
+import { ArrowUpRight, Circle } from "@lucide/astro";
 import { site } from "../../data/site.tr";
 import SiteLayout from "../../layouts/SiteLayout.astro";
 
@@ -14,7 +15,7 @@ const services = (await getCollection("services", ({ id }) => id.startsWith("tr/
 <SiteLayout title={page.data.title} description={page.data.description} activePath="/hizmetler/">
   <section class="page-hero">
     <div class="shell page-hero-inner">
-      <p class="eyebrow"><span aria-hidden="true">●</span> {page.data.hero.eyebrow}</p>
+      <p class="eyebrow"><Circle aria-hidden="true" size={9} fill="currentColor" strokeWidth={0} /> {page.data.hero.eyebrow}</p>
       <h1>{page.data.hero.heading}</h1>
       <p>{page.data.hero.text}</p>
     </div>
@@ -29,7 +30,7 @@ const services = (await getCollection("services", ({ id }) => id.startsWith("tr/
             <h3>{service.data.title}</h3>
             <p>{service.data.description}</p>
             <a href={site.whatsapp.href} aria-label={`${service.data.title} ${page.data.serviceList.ctaAriaSuffix}`}>
-              {page.data.serviceList.ctaLabel} <b aria-hidden="true">↗</b>
+              {page.data.serviceList.ctaLabel} <ArrowUpRight aria-hidden="true" size={15} />
             </a>
           </article>
         ))}

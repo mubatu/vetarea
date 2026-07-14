@@ -13,6 +13,7 @@
     "test": "npm run build && node --test tests/static-output.test.mjs"
   },
   "dependencies": {
+    "@lucide/astro": "^1.24.0",
     "astro": "5.18.0"
   },
   "devDependencies": {

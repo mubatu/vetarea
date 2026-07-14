@@ -1,5 +1,6 @@
 ---
 import { getCollection, getEntry } from "astro:content";
+import { Circle } from "@lucide/astro";
 import SiteLayout from "../../layouts/SiteLayout.astro";
 
 const page = await getEntry("pages", "tr/ekibimiz");
@@ -12,7 +13,7 @@ const team = (await getCollection("team", ({ id }) => id.startsWith("tr/")))
 <SiteLayout title={page.data.title} description={page.data.description} activePath="/ekibimiz/">
   <section class="page-hero">
     <div class="shell page-hero-inner">
-      <p class="eyebrow"><span aria-hidden="true">●</span> {page.data.hero.eyebrow}</p>
+      <p class="eyebrow"><Circle aria-hidden="true" size={9} fill="currentColor" strokeWidth={0} /> {page.data.hero.eyebrow}</p>
       <h1>{page.data.hero.heading}</h1>
       <p>{page.data.hero.text}</p>
     </div>
