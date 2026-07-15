@@ -1,6 +1,6 @@
 ---
 order: 2
 name: "Emin Çiftçi"
-role: "Veteriner Hekim"
+role: "Veteriner Teknikeri"
 initials: "EÇ"
 ---
