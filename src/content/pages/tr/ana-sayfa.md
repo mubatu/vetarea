@@ -5,7 +5,7 @@ hero:
   heading: "İyi bakılmak, onların da"
   highlight: "hakkı."
   text: "Dostunuzun her döneminde, doğru bilgi ve sakin bir yaklaşımla yanınızdayız. Modern veteriner hizmeti, tanıdığınız bir ekip ve her zaman açık bir kapı."
-  image: "https://images.unsplash.com/photo-1770836037289-e00e5f351d11?auto=format&fit=crop&fm=jpg&q=84&w=1800"
+  image: "/hero.png"
   imageAlt: "Veteriner kliniğinde muayene edilen bir köpek"
 home:
   primaryActionLabel: "Randevu al"
