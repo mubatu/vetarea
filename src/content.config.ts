@@ -10,9 +10,15 @@ const heroSchema = z.object({
   imageAlt: z.string().optional(),
 });
 
+const publicAssetPathPattern = /^\/[A-Za-z0-9._~/-]+$/;
+
 const imageSourceSchema = z.string().trim().refine(
-  (value) => value.startsWith("/") || z.string().url().safeParse(value).success,
-  "Must be an absolute URL or a public asset path that starts with /",
+  (value) => {
+    if (value.startsWith("/")) return publicAssetPathPattern.test(value);
+
+    return z.string().url().safeParse(value).success;
+  },
+  "Must be an absolute URL or an ASCII public asset path that starts with /",
 );
 
 const pages = defineCollection({
