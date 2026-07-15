@@ -23,9 +23,9 @@ const getSharedHref = (href: string) => {
     <div class="shell hero-grid">
       <div class="hero-copy">
         <h1>
-          {hero.highlight && <em>{hero.highlight}</em>}
-          {hero.highlight && <br />}
           <LineBreakText text={hero.heading} />
+          {hero.highlight && <br />}
+          {hero.highlight && <em>{hero.highlight}</em>}
         </h1>
         <p class="hero-lead">{hero.text}</p>
         <div class="hero-actions">

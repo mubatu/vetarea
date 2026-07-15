@@ -11,12 +11,18 @@ test("builds the Turkish static pages", async () => {
 
   assert.match(html, /<html lang="tr">/i);
   assert.match(html, /<title>[^<]*Vet ?Area[^<]*<\/title>/i);
+  assert.match(html, /Dostlarınızın sağlığı için her an yanınızdayız,/);
+  assert.match(html, /siz sevin yeter/);
+  assert.doesNotMatch(html, /İyi bakılmak|onların da|hakkı\./);
   assert.match(html, /<meta property="og:title" content="[^"]*Vet ?Area[^"]*"/i);
   assert.match(html, /href="\/"[^>]*aria-label="VetArea ana sayfa"/);
   assert.match(html, /src="\/logo\.(svg|png|webp)"/);
   assert.match(html, /src="\/logo-white\.png"/);
   assert.match(html, /src="\/hero\.png"/);
   assert.match(html, /<link rel="icon" href="\/logo\.png"/);
+  assert.doesNotMatch(html, /sağlıkları için gerekli adımları|biz planlayalım/);
+  assert.match(html, /Biz dostunuzun her döneminde/);
+  assert.doesNotMatch(html, /İyi bakılmak|hakkı\./);
   assert.match(html, /href="\/"[^>]*>Ana Sayfa<\/a>/);
   assert.match(html, /href="\/hizmetlerimiz\/"[^>]*>Hizmetlerimiz<\/a>/);
   assert.match(html, /href="\/hakkimizda\/"[^>]*>[\s\S]*lucide-users/i);
