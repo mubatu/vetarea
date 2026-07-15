@@ -3,7 +3,7 @@ title: "VetArea | Emek Veteriner"
 description: "Emek, Çankaya'da muayene, koruyucu sağlık, tanı ve cerrahi hizmetleri sunan veteriner kliniği."
 hero:
   heading: "Dostlarınızın sağlığı için her an yanınızdayız,"
-  highlight: "siz sevin yeter"
+  highlight: "siz sevin yeter."
   text: "Biz dostunuzun her döneminde, doğru bilgi ve sakin bir yaklaşımla yanınızdayız. Modern veteriner hizmeti, tanıdığınız bir ekip ve her zaman açık bir kapı."
   image: "/hero.png"
   imageAlt: "Veteriner kliniğinde muayene edilen bir köpek"

@@ -12,7 +12,7 @@ test("builds the Turkish static pages", async () => {
   assert.match(html, /<html lang="tr">/i);
   assert.match(html, /<title>[^<]*Vet ?Area[^<]*<\/title>/i);
   assert.match(html, /Dostlarınızın sağlığı için her an yanınızdayız,/);
-  assert.match(html, /siz sevin yeter/);
+  assert.match(html, /siz sevin yeter\./);
   assert.doesNotMatch(html, /İyi bakılmak|onların da|hakkı\./);
   assert.match(html, /<meta property="og:title" content="[^"]*Vet ?Area[^"]*"/i);
   assert.match(html, /href="\/"[^>]*aria-label="VetArea ana sayfa"/);
