@@ -6,7 +6,6 @@ test("builds the Turkish static pages", async () => {
   const html = await readFile(new URL("../dist/index.html", import.meta.url), "utf8");
   const services = await readFile(new URL("../dist/hizmetlerimiz/index.html", import.meta.url), "utf8");
   const about = await readFile(new URL("../dist/hakkimizda/index.html", import.meta.url), "utf8");
-  const faq = await readFile(new URL("../dist/sss/index.html", import.meta.url), "utf8");
   const contact = await readFile(new URL("../dist/iletisim/index.html", import.meta.url), "utf8");
   const sitemap = await readFile(new URL("../dist/sitemap.xml", import.meta.url), "utf8");
 
@@ -20,18 +19,18 @@ test("builds the Turkish static pages", async () => {
   assert.match(html, /href="\/"[^>]*>Ana Sayfa<\/a>/);
   assert.match(html, /href="\/hizmetlerimiz\/"[^>]*>Hizmetlerimiz<\/a>/);
   assert.match(html, /href="\/hakkimizda\/"[^>]*>[\s\S]*lucide-users/i);
+  assert.doesNotMatch(html, /href="\/sss\/"/);
   assert.doesNotMatch(html, /href="\/ekibimiz\/"/);
   assert.match(html, /href="\/iletisim\/"[^>]*>[\s\S]*lucide-map-pin/i);
   assert.doesNotMatch(html, /lucide-message-circle/);
   assert.match(html, /src="\/whatsapp\.png"/);
   assert.match(html, /src="\/gmaps\.png"/);
-  assert.doesNotMatch(html, />02<\/span>/);
   assert.doesNotMatch(html, />06<\/span>/);
   assert.doesNotMatch(html, /CC|EÇ|Güvendiğiniz ekip|ihtiyaç duyduğunuz anda burada/);
   assert.doesNotMatch(html, /İhtiyacınız olan sayfaya geçin/);
   assert.doesNotMatch(services, /Her yaşam evresine özenli destek/);
   assert.doesNotMatch(services, /İlk kontrolden ileri tanı süreçlerine/);
-  for (const page of [html, services, about, faq, contact]) {
+  for (const page of [html, services, about, contact]) {
     assert.doesNotMatch(page, /class="eyebrow/);
   }
   assert.match(services, /<title>Hizmetlerimiz \| VetArea<\/title>/i);
@@ -51,15 +50,19 @@ test("builds the Turkish static pages", async () => {
   assert.match(about, /alt="Veteriner Hekim Cihan Culha"/);
   assert.match(about, /Emin Çiftçi/);
   assert.doesNotMatch(about, /team-card[\s\S]*>0[12]<\/span>/);
-  assert.match(faq, /Randevu almadan gelebilir miyim/);
+  assert.match(html, /Sık Sorulanlar/);
+  assert.match(html, /Randevu almadan gelebilir miyim/);
+  assert.doesNotMatch(html, /Gelmeden önce|merak ettikleriniz|Bize sorun|Yanıtını bulamadığınız/);
   assert.match(contact, /\+90 \(538\) 253 80 83/);
   assert.match(contact, /Her gün 09\.00-21\.00/);
   assert.doesNotMatch(html, /7\/24|7 \/ 24|7 gün,? 24 saat/i);
   assert.match(html, /https:\/\/vetarea\.com\.tr\/og\.png/);
   assert.doesNotMatch(sitemap, /\/ekibimiz\//);
-  for (const page of [html, services, about, faq, contact]) {
+  assert.doesNotMatch(sitemap, /\/sss\//);
+  for (const page of [html, services, about, contact]) {
     assert.doesNotMatch(page, /react|vinext|drizzle|wrangler|codex-preview/i);
   }
 
   await assert.rejects(access(new URL("../dist/ekibimiz/index.html", import.meta.url)));
+  await assert.rejects(access(new URL("../dist/sss/index.html", import.meta.url)));
 });

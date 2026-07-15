@@ -16,11 +16,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://vetarea.com.tr/sss/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://vetarea.com.tr/iletisim/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>

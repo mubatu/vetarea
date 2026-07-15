@@ -66,9 +66,6 @@ const pages = defineCollection({
       mapSmall: z.string(),
       mapStrong: z.string(),
     }).optional(),
-    faqPage: z.object({
-      ctaLabel: z.string(),
-    }).optional(),
   }),
 });
 
