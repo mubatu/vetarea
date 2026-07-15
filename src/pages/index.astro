@@ -1,12 +1,15 @@
 ---
 import { getEntry } from "astro:content";
 import { MapPin, Phone, Plus, SquareArrowOutUpRight, Users } from "@lucide/astro";
+import LineBreakText from "../components/LineBreakText.astro";
 import { faqs, site } from "../data/site.tr";
 import SiteLayout from "../layouts/SiteLayout.astro";
 
 const home = await getEntry("pages", "tr/ana-sayfa");
 if (!home) throw new Error("Türkçe ana sayfa içeriği bulunamadı.");
 if (!home.data.home) throw new Error("Türkçe ana sayfa detayları bulunamadı.");
+const hero = home.data.hero;
+if (!hero) throw new Error("Türkçe ana sayfa hero içeriği bulunamadı.");
 
 const getSharedHref = (href: string) => {
   if (href === "phone") return site.phone.href;
@@ -19,8 +22,12 @@ const getSharedHref = (href: string) => {
   <section class="hero" id="top">
     <div class="shell hero-grid">
       <div class="hero-copy">
-        <h1>{home.data.hero.heading}<br /> <em>{home.data.hero.highlight}</em></h1>
-        <p class="hero-lead">{home.data.hero.text}</p>
+        <h1>
+          {hero.highlight && <em>{hero.highlight}</em>}
+          {hero.highlight && <br />}
+          <LineBreakText text={hero.heading} />
+        </h1>
+        <p class="hero-lead">{hero.text}</p>
         <div class="hero-actions">
           <a class="button" href={site.whatsapp.href} target="_blank" rel="noopener noreferrer">
             {home.data.home.primaryActionLabel} <SquareArrowOutUpRight aria-hidden="true" size={16} />
@@ -34,7 +41,7 @@ const getSharedHref = (href: string) => {
 
       <div class="hero-visual">
         <div class="hero-image-wrap">
-          <img src={home.data.hero.image} alt={home.data.hero.imageAlt} fetchpriority="high" />
+          <img src={hero.image} alt={hero.imageAlt} fetchpriority="high" />
         </div>
         <div class="open-card">
           <span class="open-icon" aria-hidden="true"><Plus size={25} /></span>
