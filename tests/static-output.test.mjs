@@ -47,7 +47,7 @@ test("builds the Turkish static pages", async () => {
   assert.match(services, /alt="Veteriner hekim tarafından muayene edilen bir köpek"/);
   assert.doesNotMatch(services, />0[1-9]<\/span>/);
   assert.match(about, /Aynı dikkat/);
-  assert.match(about, /src="\/klinik-dış\.png"[\s\S]*src="\/klinik-iç\.png"/);
+  assert.match(about, /src="\/clinic-exterior\.png"[\s\S]*src="\/clinic-interior\.png"/);
   assert.doesNotMatch(about, /images\.unsplash\.com\/photo-1733783506192/);
   assert.doesNotMatch(about, /Bizimle tanışın/);
   assert.match(about, /Ekibimiz/);
@@ -62,6 +62,7 @@ test("builds the Turkish static pages", async () => {
   assert.doesNotMatch(html, /Gelmeden önce|merak ettikleriniz|Bize sorun|Yanıtını bulamadığınız/);
   assert.match(contact, /\+90 \(538\) 253 80 83/);
   assert.match(contact, /Her gün 09\.00-21\.00/);
+  assert.match(contact, /class="map-frame"[\s\S]*<iframe title=/);
   assert.doesNotMatch(html, /7\/24|7 \/ 24|7 gün,? 24 saat/i);
   assert.match(html, /https:\/\/vetarea\.com\.tr\/og\.png/);
   assert.doesNotMatch(sitemap, /\/ekibimiz\//);

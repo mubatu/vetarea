@@ -8,10 +8,10 @@ hero:
   text: "Kliniğe gelen her dostun kendine özgü olduğunu biliyoruz. Bu yüzden önce dinler, sonra muayene eder ve seçenekleri sizinle birlikte değerlendiririz."
 about:
   images:
-    - src: "/klinik-dış.png"
+    - src: "/clinic-exterior.png"
       alt: "VetArea kliniğinin dış cephesi"
       caption: "Dış alan."
-    - src: "/klinik-iç.png"
+    - src: "/clinic-interior.png"
       alt: "VetArea kliniğinin iç alanı"
       caption: "İç alan."
   lead: "Kliniğe gelen her dostun kendine özgü olduğunu biliyoruz. Bu yüzden önce dinler, sonra muayene eder ve seçenekleri sizinle birlikte değerlendiririz."

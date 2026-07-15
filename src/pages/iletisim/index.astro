@@ -30,7 +30,9 @@ if (!page.data.contact) throw new Error("Türkçe iletişim detayları bulunamad
         </dl>
       </div>
       <div class="map-card">
-        <iframe title={page.data.contact.mapTitle} src={site.address.embed} loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="map-frame">
+          <iframe title={page.data.contact.mapTitle} src={site.address.embed} loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
         <a href={site.address.maps}>
           <span><small>{page.data.contact.mapSmall}</small><strong>{page.data.contact.mapStrong}</strong></span>
           <SquareArrowOutUpRight aria-hidden="true" size={15} />
