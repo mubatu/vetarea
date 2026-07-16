@@ -29,13 +29,9 @@ const pages = defineCollection({
     hero: heroSchema.optional(),
     home: z.object({
       primaryActionLabel: z.string(),
-      phoneActionLabel: z.string(),
-      statusSmall: z.string(),
-      statusStrong: z.string(),
       trustAriaLabel: z.string(),
       trust: z.array(z.object({
-        number: z.string().optional(),
-        icon: z.enum(["users", "map-pin"]).optional(),
+        icon: z.enum(["stethoscope", "users", "map-pin"]),
         title: z.string(),
         text: z.string(),
         href: z.string(),
@@ -51,17 +47,12 @@ const pages = defineCollection({
         alt: z.string().trim().min(1),
         caption: z.string().trim().min(1),
       })).min(2),
-      lead: z.string(),
-      principles: z.array(z.object({
-        title: z.string(),
-        text: z.string(),
-      })),
+      paragraphs: z.array(z.string().trim().min(1)).min(1),
       teamHeading: z.string(),
       teamText: z.string(),
     }).optional(),
     contact: z.object({
       intro: z.string(),
-      phoneCtaLabel: z.string(),
       whatsappCtaLabel: z.string(),
       labels: z.object({
         phone: z.string(),

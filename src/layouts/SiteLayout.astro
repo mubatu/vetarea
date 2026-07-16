@@ -17,35 +17,37 @@ const isActive = (href: string) => activePath === href || Astro.url.pathname ===
 <BaseLayout title={title} description={description}>
   <a class="skip-link" href="#main">{site.ui.skipLink}</a>
 
-  <div class="announcement" role="note">
-    <div class="shell announcement-inner">
-      <span><Circle aria-hidden="true" size={7} fill="currentColor" strokeWidth={0} /> {site.ui.announcementText}</span>
-      <a href={site.phone.href}>{site.ui.announcementCta}</a>
+  <div class="sticky-site-chrome">
+    <div class="announcement" role="note">
+      <div class="shell announcement-inner">
+        <span><Circle aria-hidden="true" size={7} fill="currentColor" strokeWidth={0} /> {site.ui.announcementText}</span>
+        <a href={site.phone.href}>{site.ui.announcementCta}</a>
+      </div>
     </div>
-  </div>
 
-  <header class="site-header">
-    <div class="shell header-inner">
-      <Brand />
-      <nav class="desktop-nav" aria-label={site.ui.mainNavAriaLabel}>
-        {site.nav.map((item) => (
-          <a href={item.href} aria-current={isActive(item.href) ? "page" : undefined}>{item.label}</a>
-        ))}
-      </nav>
-      <a class="button button-small header-cta" href={site.whatsapp.href} target="_blank" rel="noopener noreferrer">
-        {site.ui.appointmentCta} <SquareArrowOutUpRight aria-hidden="true" size={15} />
-      </a>
-      <details class="mobile-menu">
-        <summary aria-label={site.ui.mobileMenuLabel}>{site.ui.mobileMenuLabel}</summary>
-        <nav aria-label={site.ui.mobileNavAriaLabel}>
+    <header class="site-header">
+      <div class="shell header-inner">
+        <Brand />
+        <nav class="desktop-nav" aria-label={site.ui.mainNavAriaLabel}>
           {site.nav.map((item) => (
             <a href={item.href} aria-current={isActive(item.href) ? "page" : undefined}>{item.label}</a>
           ))}
-          <a href={site.whatsapp.href} target="_blank" rel="noopener noreferrer">{site.ui.appointmentCta}</a>
         </nav>
-      </details>
-    </div>
-  </header>
+        <a class="button button-small header-cta" href={site.whatsapp.href} target="_blank" rel="noopener noreferrer">
+          {site.ui.appointmentCta} <SquareArrowOutUpRight aria-hidden="true" size={15} />
+        </a>
+        <details class="mobile-menu">
+          <summary aria-label={site.ui.mobileMenuLabel}>{site.ui.mobileMenuLabel}</summary>
+          <nav aria-label={site.ui.mobileNavAriaLabel}>
+            {site.nav.map((item) => (
+              <a href={item.href} aria-current={isActive(item.href) ? "page" : undefined}>{item.label}</a>
+            ))}
+            <a href={site.whatsapp.href} target="_blank" rel="noopener noreferrer">{site.ui.appointmentCta}</a>
+          </nav>
+        </details>
+      </div>
+    </header>
+  </div>
 
   <main id="main">
     <slot />
@@ -73,4 +75,21 @@ const isActive = (href: string) => activePath === href || Astro.url.pathname ===
     <a href={site.whatsapp.href}><img class="mobile-action-logo" src="/whatsapp.png" alt="" aria-hidden="true" />{site.ui.mobileActions.whatsapp}</a>
     <a href={site.address.maps}><img class="mobile-action-logo" src="/gmaps.png" alt="" aria-hidden="true" />{site.ui.mobileActions.directions}</a>
   </nav>
+
+  <script>
+    const mobileMenu = document.querySelector<HTMLDetailsElement>(".mobile-menu");
+
+    document.addEventListener("pointerdown", (event) => {
+      if (mobileMenu?.open && event.target instanceof Node && !mobileMenu.contains(event.target)) {
+        mobileMenu.open = false;
+      }
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && mobileMenu?.open) {
+        mobileMenu.open = false;
+        mobileMenu.querySelector<HTMLElement>("summary")?.focus();
+      }
+    });
+  </script>
 </BaseLayout>

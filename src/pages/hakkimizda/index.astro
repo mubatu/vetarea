@@ -24,11 +24,8 @@ const team = (await getCollection("team", ({ id }) => id.startsWith("tr/")))
       </div>
       <div class="about-copy">
         <h1><LineBreakText text={page.data.hero.heading} /></h1>
-        <p class="about-lead">{page.data.about.lead}</p>
-        <div class="principles">
-          {page.data.about.principles.map((item, index) => (
-            <div><span>{String(index + 1).padStart(2, "0")}</span><p><strong>{item.title}</strong>{item.text}</p></div>
-          ))}
+        <div class="about-text">
+          {page.data.about.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
         </div>
       </div>
     </div>
