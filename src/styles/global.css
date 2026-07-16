@@ -1076,9 +1076,11 @@ a {
   .about-section { overflow: visible; }
   .about-grid { grid-template-columns: 1fr; }
   .about-visual {
-    grid-template-rows: none;
-    min-height: 0;
+    display: contents;
   }
+  .about-visual .about-image-card:first-child { order: 1; }
+  .about-copy { order: 2; }
+  .about-visual .about-image-card:nth-child(n + 2) { order: 3; }
   .about-image-card {
     min-height: 320px;
   }
