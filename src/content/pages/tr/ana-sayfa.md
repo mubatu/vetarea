@@ -10,8 +10,6 @@ hero:
 home:
   primaryActionLabel: "Randevu al"
   phoneActionLabel: "Bizi arayın"
-  statusSmall: "Çalışma saatleri"
-  statusStrong: "09.00-21.00"
   trustAriaLabel: "Klinik bilgileri"
   trust:
     - number: "09-21"
