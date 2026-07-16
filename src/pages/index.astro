@@ -1,6 +1,6 @@
 ---
 import { getEntry } from "astro:content";
-import { MapPin, Phone, Plus, SquareArrowOutUpRight, Stethoscope, Users } from "@lucide/astro";
+import { MapPin, PawPrint, Phone, Plus, SquareArrowOutUpRight, Stethoscope, Users } from "@lucide/astro";
 import LineBreakText from "../components/LineBreakText.astro";
 import { faqs, site } from "../data/site.tr";
 import SiteLayout from "../layouts/SiteLayout.astro";
@@ -38,7 +38,7 @@ if (!hero) throw new Error("Türkçe ana sayfa hero içeriği bulunamadı.");
         <div class="hero-image-wrap">
           <img src={hero.image} alt={hero.imageAlt} fetchpriority="high" />
         </div>
-        <div class="paw-dots" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+        <span class="paw-mark" aria-hidden="true"><PawPrint size={30} strokeWidth={1.9} /></span>
       </div>
     </div>
   </section>
