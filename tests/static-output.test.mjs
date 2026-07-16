@@ -13,6 +13,9 @@ test("builds the Turkish static pages", async () => {
   assert.match(html, /<title>[^<]*Vet ?Area[^<]*<\/title>/i);
   assert.match(html, /Dostlarınızın sağlığı için her an yanınızdayız,/);
   assert.match(html, /siz sevin yeter\./);
+  assert.match(html, /class="sticky-site-chrome"/);
+  assert.match(html, /Bize telefon numaramızdan 7\/24 ulaşabilirsiniz/);
+  assert.doesNotMatch(html, /Emek'te her gün 09\.00-21\.00 yanınızdayız/);
   assert.doesNotMatch(html, /İyi bakılmak|onların da|hakkı\./);
   assert.match(html, /<meta property="og:title" content="[^"]*Vet ?Area[^"]*"/i);
   assert.match(html, /href="\/"[^>]*aria-label="VetArea ana sayfa"/);
@@ -64,7 +67,6 @@ test("builds the Turkish static pages", async () => {
   assert.match(contact, /\+90 \(538\) 253 80 83/);
   assert.match(contact, /Her gün 09\.00-21\.00/);
   assert.match(contact, /class="map-frame"[\s\S]*<iframe title=/);
-  assert.doesNotMatch(html, /7\/24|7 \/ 24|7 gün,? 24 saat/i);
   assert.match(html, /https:\/\/vetarea\.com\.tr\/og\.png/);
   assert.doesNotMatch(sitemap, /\/ekibimiz\//);
   assert.doesNotMatch(sitemap, /\/sss\//);

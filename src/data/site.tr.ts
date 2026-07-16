@@ -60,7 +60,7 @@ export const site = {
     mainNavAriaLabel: "Ana menü",
     mobileNavAriaLabel: "Mobil menü",
     mobileMenuLabel: "Menüyü aç",
-    announcementText: "Emek'te her gün 09.00-21.00 yanınızdayız",
+    announcementText: "Bize telefon numaramızdan 7/24 ulaşabilirsiniz",
     announcementCta: "Acil durumlar için arayın",
     appointmentCta: "Randevu al",
     footerDescription: "Dostlarınız için modern, güvenilir ve ulaşılabilir veteriner hizmeti.",

@@ -18,7 +18,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 112px;
+  scroll-padding-top: 152px;
 }
 
 body {
@@ -74,6 +74,12 @@ a {
   transform: translateY(0);
 }
 
+.sticky-site-chrome {
+  position: sticky;
+  z-index: 100;
+  top: 0;
+}
+
 .announcement {
   background: var(--navy-deep);
   color: #eaf3f9;
@@ -105,9 +111,7 @@ a {
 }
 
 .site-header {
-  position: sticky;
-  z-index: 100;
-  top: 0;
+  position: relative;
   background: rgba(255,255,255,.94);
   border-bottom: 1px solid rgba(8,57,106,.08);
   backdrop-filter: blur(16px);
@@ -1093,7 +1097,7 @@ a {
 }
 
 @media (max-width: 600px) {
-  html { scroll-padding-top: 90px; }
+  html { scroll-padding-top: 150px; }
   body { padding-bottom: 68px; }
   .shell { width: calc(100% - 32px); }
   .brand-mark { width: 50px; height: 50px; border-radius: 11px 11px 11px 4px; font-size: 21px; }
