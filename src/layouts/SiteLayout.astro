@@ -75,4 +75,21 @@ const isActive = (href: string) => activePath === href || Astro.url.pathname ===
     <a href={site.whatsapp.href}><img class="mobile-action-logo" src="/whatsapp.png" alt="" aria-hidden="true" />{site.ui.mobileActions.whatsapp}</a>
     <a href={site.address.maps}><img class="mobile-action-logo" src="/gmaps.png" alt="" aria-hidden="true" />{site.ui.mobileActions.directions}</a>
   </nav>
+
+  <script>
+    const mobileMenu = document.querySelector<HTMLDetailsElement>(".mobile-menu");
+
+    document.addEventListener("pointerdown", (event) => {
+      if (mobileMenu?.open && event.target instanceof Node && !mobileMenu.contains(event.target)) {
+        mobileMenu.open = false;
+      }
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && mobileMenu?.open) {
+        mobileMenu.open = false;
+        mobileMenu.querySelector<HTMLElement>("summary")?.focus();
+      }
+    });
+  </script>
 </BaseLayout>
