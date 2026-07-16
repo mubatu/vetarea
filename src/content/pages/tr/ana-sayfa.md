@@ -9,7 +9,6 @@ hero:
   imageAlt: "Veteriner kliniğinde muayene edilen bir köpek"
 home:
   primaryActionLabel: "Randevu al"
-  phoneActionLabel: "Bizi arayın"
   trustAriaLabel: "Klinik bilgileri"
   trust:
     - number: "09-21"

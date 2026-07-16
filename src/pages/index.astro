@@ -32,9 +32,9 @@ const getSharedHref = (href: string) => {
           <a class="button" href={site.whatsapp.href} target="_blank" rel="noopener noreferrer">
             {home.data.home.primaryActionLabel} <SquareArrowOutUpRight aria-hidden="true" size={16} />
           </a>
-          <a class="text-link" href={site.phone.href}>
-            <span class="link-icon" aria-hidden="true"><Phone size={16} /></span>
-            <span>{home.data.home.phoneActionLabel}<strong>{site.phone.label}</strong></span>
+          <a class="button hero-phone-action" href={site.phone.href}>
+            <Phone aria-hidden="true" size={16} />
+            {site.phone.label}
           </a>
         </div>
       </div>

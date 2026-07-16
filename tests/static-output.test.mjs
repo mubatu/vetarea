@@ -22,6 +22,8 @@ test("builds the Turkish static pages", async () => {
   assert.match(html, /src="\/logo\.(svg|png|webp)"/);
   assert.match(html, /src="\/logo-white\.png"/);
   assert.match(html, /src="\/hero\.png"/);
+  assert.match(html, /class="button hero-phone-action"/);
+  assert.doesNotMatch(html, /Bizi arayın/);
   assert.doesNotMatch(html, /class="open-card"|Çalışma saatleri/);
   assert.match(html, /<link rel="icon" href="\/logo\.png"/);
   assert.doesNotMatch(html, /sağlıkları için gerekli adımları|biz planlayalım/);

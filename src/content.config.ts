@@ -29,7 +29,6 @@ const pages = defineCollection({
     hero: heroSchema.optional(),
     home: z.object({
       primaryActionLabel: z.string(),
-      phoneActionLabel: z.string(),
       trustAriaLabel: z.string(),
       trust: z.array(z.object({
         number: z.string().optional(),
