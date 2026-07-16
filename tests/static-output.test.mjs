@@ -56,7 +56,10 @@ test("builds the Turkish static pages", async () => {
   assert.match(services, /src="\/pasaport\.jpeg"/);
   assert.match(services, /alt="Veteriner hekim tarafından muayene edilen bir köpek"/);
   assert.doesNotMatch(services, />0[1-9]<\/span>/);
-  assert.match(about, /Aynı dikkat/);
+  assert.match(about, /Çeyrek asırlık tecrübe\./);
+  assert.match(about, /2004 yılında Ankara Emek’te kurulan veteriner kliniğimiz/);
+  assert.match(about, /Dostlarınızın sağlığı için her an yanınızdayız, siz sevin yeter\./);
+  assert.doesNotMatch(about, /class="principles"|Açık iletişim|Bireysel yaklaşım|Süreklilik/);
   assert.match(about, /src="\/clinic-exterior\.png"[\s\S]*src="\/clinic-interior\.png"/);
   assert.doesNotMatch(about, /images\.unsplash\.com\/photo-1733783506192/);
   assert.doesNotMatch(about, /Bizimle tanışın/);

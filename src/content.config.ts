@@ -47,11 +47,7 @@ const pages = defineCollection({
         alt: z.string().trim().min(1),
         caption: z.string().trim().min(1),
       })).min(2),
-      lead: z.string(),
-      principles: z.array(z.object({
-        title: z.string(),
-        text: z.string(),
-      })),
+      paragraphs: z.array(z.string().trim().min(1)).min(1),
       teamHeading: z.string(),
       teamText: z.string(),
     }).optional(),
