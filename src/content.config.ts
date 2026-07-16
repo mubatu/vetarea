@@ -31,8 +31,7 @@ const pages = defineCollection({
       primaryActionLabel: z.string(),
       trustAriaLabel: z.string(),
       trust: z.array(z.object({
-        number: z.string().optional(),
-        icon: z.enum(["users", "map-pin"]).optional(),
+        icon: z.enum(["stethoscope", "users", "map-pin"]),
         title: z.string(),
         text: z.string(),
         href: z.string(),

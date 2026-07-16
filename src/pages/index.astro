@@ -1,6 +1,6 @@
 ---
 import { getEntry } from "astro:content";
-import { MapPin, Phone, Plus, SquareArrowOutUpRight, Users } from "@lucide/astro";
+import { MapPin, Phone, Plus, SquareArrowOutUpRight, Stethoscope, Users } from "@lucide/astro";
 import LineBreakText from "../components/LineBreakText.astro";
 import { faqs, site } from "../data/site.tr";
 import SiteLayout from "../layouts/SiteLayout.astro";
@@ -11,11 +11,6 @@ if (!home.data.home) throw new Error("Türkçe ana sayfa detayları bulunamadı.
 const hero = home.data.hero;
 if (!hero) throw new Error("Türkçe ana sayfa hero içeriği bulunamadı.");
 
-const getSharedHref = (href: string) => {
-  if (href === "phone") return site.phone.href;
-  if (href === "maps") return site.address.maps;
-  return href;
-};
 ---
 
 <SiteLayout title={home.data.title} description={home.data.description} activePath="/">
@@ -51,11 +46,11 @@ const getSharedHref = (href: string) => {
   <section class="trust-bar" aria-label={home.data.home.trustAriaLabel}>
     <div class="shell trust-grid">
       {home.data.home.trust.map((item) => (
-        <a href={getSharedHref(item.href)}>
+        <a href={item.href}>
           <span class="trust-number">
+            {item.icon === "stethoscope" && <Stethoscope aria-hidden="true" size={18} />}
             {item.icon === "users" && <Users aria-hidden="true" size={18} />}
             {item.icon === "map-pin" && <MapPin aria-hidden="true" size={18} />}
-            {!item.icon && item.number}
           </span>
           <span><strong>{item.title}</strong><small>{item.text}</small></span>
           <SquareArrowOutUpRight aria-hidden="true" size={15} />
