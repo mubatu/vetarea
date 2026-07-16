@@ -351,21 +351,20 @@ a {
 }
 
 .hero-actions .button {
-  width: min(220px, calc((100% - 12px) / 2));
+  width: min(200px, calc((100% - 12px) / 2));
   font-size: 16px;
 }
 
-.hero-phone-action {
+.phone-action {
   gap: 8px;
   padding: 0 10px;
   border-color: var(--navy);
   background: var(--navy);
   box-shadow: 0 12px 24px rgba(8,57,106,.18);
-  font-weight: 600;
   white-space: nowrap;
 }
 
-.hero-phone-action:hover {
+.phone-action:hover {
   border-color: var(--navy-deep);
   background: var(--navy-deep);
   box-shadow: 0 16px 32px rgba(8,57,106,.24);
@@ -822,8 +821,22 @@ a {
   margin-bottom: 34px;
 }
 
-.button-white { background: white; border-color: white; color: var(--navy); box-shadow: none; }
-.button-white:hover { background: #eaf1f5; }
+.contact-actions .button {
+  width: 180px;
+}
+
+.contact-actions .phone-action {
+  border-color: var(--red);
+  background: var(--red);
+  box-shadow: 0 12px 24px rgba(233,21,35,.24);
+}
+
+.contact-actions .phone-action:hover {
+  border-color: var(--red-dark);
+  background: var(--red-dark);
+  box-shadow: 0 16px 32px rgba(233,21,35,.3);
+}
+
 .button-outline-light { border-color: rgba(255,255,255,.32); background: transparent; box-shadow: none; }
 .button-outline-light:hover { border-color: white; background: rgba(255,255,255,.08); }
 .button-whatsapp {

@@ -63,6 +63,7 @@ export const site = {
     announcementText: "Bize telefon numaramızdan 7/24 ulaşabilirsiniz",
     announcementCta: "Acil durumlar için arayın",
     appointmentCta: "Randevu al",
+    callCta: "Bizi arayın",
     footerDescription: "Dostlarınız için modern, güvenilir ve ulaşılabilir veteriner hizmeti.",
     footerExploreHeading: "Keşfedin",
     footerContactHeading: "Ulaşın",

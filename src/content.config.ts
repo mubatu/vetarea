@@ -58,7 +58,6 @@ const pages = defineCollection({
     }).optional(),
     contact: z.object({
       intro: z.string(),
-      phoneCtaLabel: z.string(),
       whatsappCtaLabel: z.string(),
       labels: z.object({
         phone: z.string(),

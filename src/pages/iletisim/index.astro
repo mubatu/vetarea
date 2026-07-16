@@ -1,6 +1,6 @@
 ---
 import { getEntry } from "astro:content";
-import { SquareArrowOutUpRight } from "@lucide/astro";
+import { Phone, SquareArrowOutUpRight } from "@lucide/astro";
 import LineBreakText from "../../components/LineBreakText.astro";
 import WhatsAppIcon from "../../components/WhatsAppIcon.astro";
 import { site } from "../../data/site.tr";
@@ -18,7 +18,10 @@ if (!page.data.contact) throw new Error("Türkçe iletişim detayları bulunamad
         <h1><LineBreakText text={page.data.hero.heading} /></h1>
         <p>{page.data.contact.intro}</p>
         <div class="contact-actions">
-          <a class="button button-white" href={site.phone.href}>{page.data.contact.phoneCtaLabel} <SquareArrowOutUpRight aria-hidden="true" size={16} /></a>
+          <a class="button phone-action" href={site.phone.href}>
+            <Phone aria-hidden="true" size={16} />
+            {site.ui.callCta}
+          </a>
           <a class="button button-whatsapp" href={site.whatsapp.href} target="_blank" rel="noopener noreferrer">
             {page.data.contact.whatsappCtaLabel} <WhatsAppIcon />
           </a>

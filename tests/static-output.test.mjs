@@ -22,8 +22,8 @@ test("builds the Turkish static pages", async () => {
   assert.match(html, /src="\/logo\.(svg|png|webp)"/);
   assert.match(html, /src="\/logo-white\.png"/);
   assert.match(html, /src="\/hero\.png"/);
-  assert.match(html, /class="button hero-phone-action"/);
-  assert.doesNotMatch(html, /Bizi arayın/);
+  assert.match(html, /class="button phone-action"/);
+  assert.match(html, /class="button phone-action"[^>]*>[\s\S]*Bizi arayın/);
   assert.doesNotMatch(html, /class="open-card"|Çalışma saatleri/);
   assert.match(html, /<link rel="icon" href="\/logo\.png"/);
   assert.doesNotMatch(html, /sağlıkları için gerekli adımları|biz planlayalım/);
@@ -67,6 +67,9 @@ test("builds the Turkish static pages", async () => {
   assert.match(html, /Randevu almadan gelebilir miyim/);
   assert.doesNotMatch(html, /Gelmeden önce|merak ettikleriniz|Bize sorun|Yanıtını bulamadığınız/);
   assert.match(contact, /\+90 \(538\) 253 80 83/);
+  assert.match(contact, /class="button phone-action"/);
+  assert.match(contact, /class="button phone-action"[^>]*>[\s\S]*Bizi arayın/);
+  assert.doesNotMatch(contact, /Hemen ara/);
   assert.match(contact, /Her gün 09\.00-21\.00/);
   assert.match(contact, /class="map-frame"[\s\S]*<iframe title=/);
   assert.match(html, /https:\/\/vetarea\.com\.tr\/og\.png/);
