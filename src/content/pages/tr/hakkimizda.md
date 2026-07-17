@@ -8,10 +8,10 @@ about:
   images:
     - src: "/clinic-exterior.png"
       alt: "VetArea kliniğinin dış cephesi"
-      caption: "Dış alan."
+      caption: ""
     - src: "/clinic-interior.png"
       alt: "VetArea kliniğinin iç alanı"
-      caption: "İç alan."
+      caption: ""
   paragraphs:
     - "2004 yılında Ankara Emek’te kurulan veteriner kliniğimiz, çeyrek asra yaklaşan tecrübesi ve ilk günkü heyecanıyla sevimli dostlarımızın hayatına dokunmaya devam ediyor. Kurulduğumuz günden bu yana, modern tıbbi altyapımız ve uzman kadromuzla patili dostlarımızın tüm sağlık ihtiyaçlarında güvenilir bir liman olduk."
     - "Sağlığın ve acil durumların zamanı olmadığını çok iyi biliyoruz. Bu yüzden, haftanın 7 günü 24 saat kesintisiz ve her an ulaşılabilir hizmet anlayışımızla, dostlarımızın en ihtiyaç duyduğu anlarda daima yanlarındayız."
