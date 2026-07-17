@@ -38,7 +38,7 @@ export const site = {
     embed:
       "https://www.google.com/maps?q=VetArea%20Emek%20Veteriner%20Klini%C4%9Fi&output=embed",
   },
-  hours: "Her gün 09.00-21.00",
+  hours: "Her gün 09:00 - 21:00",
   schemaHours: "Mo-Su 09:00-21:00",
   socialImage: {
     src: "/og.png",
